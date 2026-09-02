@@ -122,6 +122,16 @@ body.is-home .entry{max-width:none;padding:0}
   }
   #nav-check:checked ~ .nav .nav-links{display:flex}
 }
+
+/* embed-page: Sauna University iframe fills remaining viewport (header 64px, no preview banner) */
+html:has(body.embed-page),
+body.embed-page{height:100%;overflow:hidden}
+.embed-page .page-main,
+.embed-page .entry,
+.embed-page .entry-body{height:100%;max-width:none;padding:0;margin:0}
+.embed-page .entry-head,
+.embed-page .site-footer{display:none}
+.embed-page iframe{width:100%;height:calc(100vh - 64px);border:0;display:block}
 /* ===== .ranking-static — GAS ranking iframe replacement (gold #d4a017) ===== */
 .ranking-static{
   --rk-ink:#0a0a0a; --rk-ink2:#141414; --rk-gold:#d4a017; --rk-gold-bright:#f5c542;
