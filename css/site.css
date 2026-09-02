@@ -262,3 +262,61 @@ body.embed-page{height:100%;overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .ranking-static *{animation:none!important;}
 }
+
+/* home TOP3 + 10-axis EVALUATION (static; no inner overflow:auto) */
+.gomi-ranking .ranking-static,
+.ranking-static.ranking-top3{
+  max-width:760px;
+  margin:0 auto;
+  padding:0;
+  text-align:left;
+  overflow:visible;
+  height:auto;
+  max-height:none;
+}
+.ranking-static.ranking-top3 .tab-desc{margin:0 0 16px;min-height:0;}
+.ranking-static.ranking-scores10{
+  max-width:920px;
+  text-align:left;
+  overflow:visible;
+  height:auto;
+  max-height:none;
+}
+.ranking-static .card-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:0 0 40px;
+}
+@media(min-width:640px){
+  .ranking-static .card-grid{grid-template-columns:repeat(5,1fr);gap:14px;}
+}
+.ranking-static .score-card{
+  display:block;text-decoration:none;color:inherit;
+  background:var(--rk-ink2);border:1px solid var(--rk-line);border-radius:4px;
+  padding:22px 16px 18px;text-align:center;
+  transition:border-color .25s, background .25s, transform .2s;
+}
+.ranking-static .score-card:hover{
+  border-color:var(--rk-gold);background:#1a1810;transform:translateY(-2px);color:inherit;
+}
+.ranking-static .score-card .no{
+  font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:3px;color:var(--rk-gold);margin-bottom:10px;
+}
+.ranking-static .score-card .en{
+  font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(13px,2.8vw,16px);letter-spacing:1.5px;color:#fff;line-height:1.25;
+}
+.ranking-static .score-card .jp{font-size:11px;color:var(--rk-muted);margin-top:8px;letter-spacing:.5px;}
+.ranking-static .axis-block{margin:0 0 56px;overflow:visible;height:auto;max-height:none;}
+.ranking-static .axis-head{text-align:center;margin:8px 0 28px;}
+.ranking-static .axis-head .en{
+  font-family:"Oswald",sans-serif;font-size:clamp(28px,6vw,42px);font-weight:600;letter-spacing:3px;color:#fff;
+}
+.ranking-static .axis-head .jp{font-size:13px;color:var(--rk-muted);margin-top:8px;}
+.ranking-static .axis-head .desc{
+  font-size:12px;color:var(--rk-muted);margin-top:14px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.7;
+}
+.ranking-static .rank-list[data-metric="axis"] .rank-first{border-color:var(--rk-gold);}
+.ranking-static .rank-list[data-metric="axis"] .rank-row:nth-child(-n+3) .pos{color:var(--rk-gold);}
+.ranking-static .rank-list[data-metric="axis"] .rank-row .score{color:var(--rk-gold);}
+.ranking-static .axis-block .more-note{margin-top:16px;margin-bottom:0;}
+@media(prefers-reduced-motion:reduce){
+  .ranking-static .score-card:hover{transform:none;}
+}
