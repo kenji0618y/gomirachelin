@@ -51,17 +51,136 @@
 <p>GOMIRACHELINが実際に訪問した全国のサウナ施設を、①サウナ室②水風呂③休憩④動線⑤ロウリュ⑥スパ内施設⑦スパ外施設⑧清潔さ⑨唯一無二性⑩ホスピタリティの10項目で採点し、料金と照らして算出した「コスパスコア」で格付けした正直ランキングです。</p>
 <p>広告や忖度に左右されず、「払ったお金に、その体験は見合っていたか」という一点だけで評価しています。高ければ良いわけではなく、安くても整えるサウナは正当に上位へ。各施設名をタップすると、10項目の採点内訳つきの詳細な正直レビューをご覧いただけます。</p>
 </div>
-<!-- /wp:post-content -->
-
-<!-- wp:html -->
-<iframe src="https://script.google.com/macros/s/AKfycbwmOIUlsf4rA8fw8za5wbtsM-No2UDFDAFQHRhKrqwQ4lUUXAJlXcbpGOQuPhaNK0IH/exec?page=top" style="width:100%;height:2400px;border:none;display:block;" loading="lazy" title="全国コスパ最強サウナランキング">
-</iframe>
-<!-- /wp:html -->
-
-<!-- wp:html -->
-<div style="max-width:860px;margin:2.5em auto;padding:2em;background:#0a0a0a;color:#e8e2d4;border:1px solid #d4a017;border-radius:8px;line-height:1.9;">
-
+<section class="ranking-static" id="ranking" aria-label="全国コスパ最強サウナランキング">
+  <div class="section-head">
+    <div class="label">THE RANKING</div>
+    <h2 class="mincho">全国コスパ最強サウナ</h2>
+    <p>独自の10項目評価から算出した3つのスコアで格付け</p>
   </div>
+  <div class="tabs" id="ranking-tabs" role="tablist">
+    <button type="button" class="tab active" data-key="total" role="tab" aria-selected="true"><span class="tab-jp">総合</span><span class="tab-en">OVERALL</span></button>
+    <button type="button" class="tab" data-key="cospa" role="tab" aria-selected="false"><span class="tab-jp">コスパ</span><span class="tab-en">COST PERF.</span></button>
+  </div>
+  <div class="tab-desc" id="ranking-tab-desc"></div>
+  <div class="rank-list" id="ranking-list" data-metric="total"></div>
+  <p class="more-note num" id="ranking-more"></p>
+  <div class="more-link">
+    <a href="/10項目別ランキング/">10-CATEGORY RANKING ›</a>
+  </div>
+  <p class="foot-note">点数は管理人の主観による評価です ／ 掲載スコアは訪問時点のもの ／ ※当サイトはアフィリエイトプログラムを利用しています</p>
+</section>
+<script>
+
+(function(){
+  var BASE = "/";
+  var FACILITIES = [{"name":"草加健康センター","pref":"埼玉","price":1250,"min":55,"yen_h":78,"total":70,"cospa":45,"taipa":23.7,"slug":"草加健康センター-6","closed":false,"official":"https://yunoizumi.com/souka/"},{"name":"ウェルビー栄","pref":"名古屋","price":2570,"min":20,"yen_h":143,"total":71,"cospa":38.2,"taipa":35.9,"slug":"ウェルビー栄","closed":false,"official":"https://www.wellbe.co.jp/sakae/"},{"name":"サウナしきじ","pref":"静岡","price":900,"min":30,"yen_h":113,"total":63,"cospa":36.5,"taipa":27.6,"slug":"サウナしきじ","closed":false,"official":"https://www.saunashikiji.jp/"},{"name":"ウェルビー福岡","pref":"福岡","price":2000,"min":10,"yen_h":1000,"total":67,"cospa":13.5,"taipa":41.5,"slug":"ウェルビー福岡","closed":false,"official":"https://www.wellbe.co.jp/fukuoka/"},{"name":"オアシスサウナ アスティル","pref":"新橋","price":1628,"min":10,"yen_h":407,"total":60,"cospa":21.4,"taipa":37.2,"slug":"オアシスサウナ-アスティル","closed":false,"official":"https://www.oasissauna.jp/"},{"name":"テルマー湯","pref":"新宿","price":2405,"min":25,"yen_h":200,"total":69,"cospa":33.1,"taipa":32.3,"slug":"テルマー湯","closed":false,"official":"https://thermae-yu.jp/"},{"name":"スパラクーア","pref":"東京","price":3500,"min":20,"yen_h":250,"total":73,"cospa":32.2,"taipa":36.9,"slug":"スパラクーア","closed":false,"official":"https://www.laqua.jp/spa/"},{"name":"上野ステーションホステル オリエンタル3","pref":"上野","price":800,"min":12,"yen_h":267,"total":62,"cospa":26.7,"taipa":36.5,"slug":"上野ステーションホステル-オリエンタル3","closed":false,"official":"https://maps.google.com/?cid=12041331037211239783"},{"name":"カプセルホテル＆サウナ サンフラワー巣鴨","pref":"巣鴨","price":880,"min":20,"yen_h":587,"total":60,"cospa":17.6,"taipa":30.3,"slug":"カプセルホテル＆サウナ-サンフラワー巣鴨","closed":false,"official":"https://www.sunflower-capsule.com/"},{"name":"相模健康センター","pref":"神奈川","price":1400,"min":40,"yen_h":97,"total":71,"cospa":43,"taipa":27.7,"slug":"相模健康センター","closed":true,"official":"http://www.yunoizumi.com/sagami/"},{"name":"横浜天然温泉 ヨコヤマ・ユーランド鶴見","pref":"神奈川","price":1300,"min":27,"yen_h":100,"total":50,"cospa":30,"taipa":22.8,"slug":"横浜天然温泉-ヨコヤマ・ユーランド鶴見","closed":false,"official":"https://www.yu-land.com/"},{"name":"スパワールド","pref":"大阪","price":1500,"min":20,"yen_h":107,"total":73,"cospa":43,"taipa":36.9,"slug":"スパワールド","closed":false,"official":"https://www.spaworld.co.jp/"},{"name":"ニコーリフレ","pref":"北海道","price":2400,"min":10,"yen_h":126,"total":64,"cospa":35.8,"taipa":39.7,"slug":"ニコーリフレ","closed":false,"official":"https://www.nikoh.info/"},{"name":"東京染井温泉 SAKURA","pref":"巣鴨","price":2100,"min":25,"yen_h":162,"total":58,"cospa":30,"taipa":27.1,"slug":"東京染井温泉-sakura","closed":false,"official":"https://www.sakura-2005.com/"},{"name":"ゆ家 和ごころ 吉の湯","pref":"杉並区","price":900,"min":35,"yen_h":300,"total":48,"cospa":19.7,"taipa":19.8,"slug":"ゆ家-和ごころ-吉の湯","closed":false,"official":"https://yoshinoyu.sakura.ne.jp/"},{"name":"上野ステーションホステル オリエンタル2","pref":"上野","price":800,"min":12,"yen_h":267,"total":64,"cospa":27.5,"taipa":37.7,"slug":"上野ステーションホステル-オリエンタル2","closed":false,"official":"https://www.centurion-hotel.com/oriental_2/"},{"name":"上野ステーションホステル オリエンタル1","pref":"上野","price":800,"min":12,"yen_h":267,"total":60,"cospa":25.8,"taipa":35.3,"slug":"上野ステーションホステル-オリエンタル1","closed":false,"official":"https://www.centurion-hotel.com/oriental_1/"},{"name":"富士見湯","pref":"白山","price":520,"min":20,"yen_h":47,"total":31,"cospa":22.7,"taipa":15.7,"slug":"富士見湯","closed":true,"official":"http://www.sentou-bunkyo.com/pg63.html"},{"name":"仙川 湯けむりの里","pref":"東京","price":850,"min":40,"yen_h":53,"total":60,"cospa":42.7,"taipa":23.4,"slug":"仙川-湯けむりの里","closed":false,"official":"https://www.yukemurinosato.com/sengawa/"},{"name":"板橋天然温泉 スパディオ","pref":"板橋","price":2260,"min":35,"yen_h":174,"total":51,"cospa":25.7,"taipa":21.1,"slug":"板橋天然温泉-スパディオ","closed":true,"official":"http://www.spadio.com/"},{"name":"タカラ湯","pref":"千住","price":550,"min":25,"yen_h":69,"total":36,"cospa":23.9,"taipa":16.8,"slug":"タカラ湯","closed":false,"official":"http://slowtime.net/takarayu/"},{"name":"東京荻窪天然温泉 なごみの湯","pref":"荻窪","price":1980,"min":30,"yen_h":147,"total":59,"cospa":31.4,"taipa":25.8,"slug":"東京荻窪天然温泉-なごみの湯","closed":false,"official":"https://www.nagomino-yu.com/"},{"name":"前野原温泉 さやの湯処","pref":"板橋","price":1120,"min":35,"yen_h":75,"total":57,"cospa":37.1,"taipa":23.5,"slug":"前野原温泉-さやの湯処","closed":false,"official":"https://www.sayanoyudokoro.co.jp/"},{"name":"有馬温泉 かんぽの宿","pref":"兵庫","price":1000,"min":45,"yen_h":143,"total":32,"cospa":17.2,"taipa":11.9,"slug":"有馬温泉-かんぽの宿","closed":false,"official":"https://kamenoi-hotels.com/arima/"},{"name":"神戸ハーバーランド温泉 万葉倶楽部","pref":"神戸","price":2950,"min":15,"yen_h":134,"total":55,"cospa":30.3,"taipa":30.4,"slug":"神戸ハーバーランド温泉-万葉倶楽部","closed":false,"official":"https://www.manyo.co.jp/kobe/"},{"name":"510グループ AKスパ","pref":"新宿","price":1300,"min":20,"yen_h":433,"total":47,"cospa":16.3,"taipa":23.7,"slug":"510グループ-akスパ","closed":false,"official":"https://capsule510.jp/content5.html"},{"name":"サウナセンター","pref":"鶯谷","price":1800,"min":15,"yen_h":600,"total":61,"cospa":17.6,"taipa":33.7,"slug":"サウナセンター","closed":false,"official":"https://sauna-center.jp/"},{"name":"ふくの湯","pref":"東京","price":550,"min":15,"yen_h":42,"total":28,"cospa":21,"taipa":15.5,"slug":"ふくの湯","closed":false,"official":"https://www.sentou-bunkyo.com/"},{"name":"音戸温泉","pref":"広島","price":500,"min":20,"yen_h":42,"total":43,"cospa":32.3,"taipa":21.7,"slug":"音戸温泉","closed":false,"official":"http://www.ondo-onsen.co.jp/index.html"},{"name":"らかんの湯","pref":"佐賀","price":4800,"min":30,"yen_h":2400,"total":84,"cospa":4.1,"taipa":36.8,"slug":"らかんの湯","closed":false,"official":"https://www.mifuneyama.co.jp/rakan.html"},{"name":"佐賀大和温泉ホテルアマンディ","pref":"佐賀","price":910,"min":25,"yen_h":70,"total":58,"cospa":38.4,"taipa":27.1,"slug":"佐賀大和温泉ホテルアマンディ","closed":false,"official":"https://www.amandi.jp/"},{"name":"五香湯","pref":"京都","price":550,"min":15,"yen_h":55,"total":55,"cospa":38.7,"taipa":30.4,"slug":"五香湯","closed":false,"official":"https://www.gokouyu.net/"},{"name":"TOTONOI","pref":"福岡","price":1300,"min":15,"yen_h":867,"total":59,"cospa":13.3,"taipa":32.6,"slug":"totonoi","closed":false,"official":"https://www.totonoikokura.com/"},{"name":"京王高尾山温泉 / 極楽湯","pref":"東京","price":1100,"min":55,"yen_h":76,"total":61,"cospa":39.5,"taipa":20.6,"slug":"京王高尾山温泉-極楽湯","closed":false,"official":"https://www.takaosan-onsen.jp/"},{"name":"瀬長島ホテル 龍神の湯","pref":"沖縄","price":1520,"min":20,"yen_h":84,"total":64,"cospa":40.4,"taipa":32.3,"slug":null,"closed":false,"official":"https://www.resorts.co.jp/senaga/ryujinhotspring"},{"name":"スカイスパ","pref":"神奈川","price":1650,"min":5,"yen_h":330,"total":64,"cospa":25.2,"taipa":47,"slug":"スカイスパ","closed":false,"official":"https://www.skyspa.co.jp/"},{"name":"神戸サウナ","pref":"神戸","price":3100,"min":15,"yen_h":172,"total":66,"cospa":33.4,"taipa":36.5,"slug":"神戸サウナ","closed":false,"official":"https://www.kobe-sauna.co.jp/"},{"name":"サ郷kakeRu","pref":"沖縄県","price":4500,"min":40,"yen_h":2250,"total":74,"cospa":4.4,"taipa":28.9,"slug":"サ郷kakeru","closed":false,"official":"https://www.kakeru37.com/"},{"name":"寒の地獄旅館","pref":"大分県","price":2500,"min":50,"yen_h":1250,"total":73,"cospa":11.8,"taipa":25.8,"slug":"寒の地獄旅館","closed":false,"official":"http://kannojigoku.jp/"},{"name":"YUBUNE SAUNA PARK はにゅうの湯","pref":"埼玉県","price":800,"min":60,"yen_h":57,"total":77,"cospa":53.7,"taipa":24.9,"slug":"yubune-sauna-park-はにゅうの湯","closed":false,"official":"https://yubune-sauna-park.com/"},{"name":"大阪サウナDESSE","pref":"大阪府","price":2900,"min":15,"yen_h":1450,"total":77,"cospa":10.5,"taipa":42.6,"slug":"大阪サウナdesse","closed":false,"official":"https://desse.osaka/"},{"name":"キャナルリゾート","pref":"愛知県","price":900,"min":30,"yen_h":56,"total":76,"cospa":53.3,"taipa":33.3,"slug":"キャナルリゾート","closed":false,"official":"https://canalresort.jp/"},{"name":"サウナと天然温泉 湯らっくす","pref":"熊本県","price":990,"min":20,"yen_h":66,"total":71,"cospa":47.7,"taipa":35.9,"slug":"サウナと天然温泉-湯らっくす","closed":false,"official":"https://yulax.info/"},{"name":"伊予の湯治場 喜助の湯","pref":"愛媛県","price":800,"min":10,"yen_h":38,"total":72,"cospa":55.3,"taipa":44.6,"slug":"伊予の湯治場-喜助の湯","closed":false,"official":"https://kisuke.com/yu-matsuyama/"},{"name":"湯屋 FUROBAKKA","pref":"富山県","price":900,"min":90,"yen_h":69,"total":73,"cospa":48.5,"taipa":18.7,"slug":"湯屋-furobakka","closed":false,"official":"https://furobakka.com/"},{"name":"渋谷SAUNAS","pref":"東京都","price":3080,"min":20,"yen_h":1232,"total":67,"cospa":11,"taipa":33.8,"slug":"渋谷saunas","closed":false,"official":"https://saunas-saunas.com/shibuya/"},{"name":"SAUNA BUG","pref":"愛知県","price":2000,"min":null,"yen_h":1000,"total":74,"cospa":14.9,"taipa":0,"slug":"sauna-bug","closed":false,"official":"https://sauna-bug.com/"},{"name":"神戸 クアハウス","pref":"神戸","price":2600,"min":null,"yen_h":137,"total":62,"cospa":33.9,"taipa":0,"slug":"神戸-クアハウス","closed":false,"official":"https://kobe-kua-house.com/"}];
+  var TAB_DESC = {
+    total: "安さも近さも妥協しない。総合力で選ばれた、文句なしの実力派。",
+    cospa: "1時間あたりの料金が安く、体験も濃い。財布にやさしいサウナの頂点。"
+  };
+  var UNIT = { total:"OVERALL", cospa:"COST PERF." };
+  var current = "total";
+
+  function esc(s){
+    return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function fmt(v){
+    if(v==null || v==="") return "—";
+    var n = Number(v);
+    return isNaN(n) ? "—" : n.toFixed(1);
+  }
+  function articleUrl(slug){
+    if(!slug) return "";
+    return BASE + encodeURI(slug) + "/";
+  }
+  function buildPlace(x){
+    var parts = [];
+    if(x.pref) parts.push(esc(x.pref));
+    if(x.min != null && x.min !== "") parts.push("主要都市から"+x.min+"分");
+    if(x.price != null && x.price !== ""){
+      var yh = (x.yen_h != null && x.yen_h !== "") ? "（¥"+Math.round(Number(x.yen_h))+"/h）" : "";
+      parts.push("平日"+x.price+"円"+yh);
+    } else if(x.yen_h != null && x.yen_h !== ""){
+      parts.push("¥"+Math.round(Number(x.yen_h))+"/h");
+    }
+    return parts.join(" ／ ");
+  }
+  function sorted(key){
+    var copy = FACILITIES.slice();
+    copy.sort(function(a,b){
+      var av = a[key], bv = b[key];
+      var an = (av==null||av==="") ? -Infinity : Number(av);
+      var bn = (bv==null||bv==="") ? -Infinity : Number(bv);
+      if(bn !== an) return bn - an;
+      return 0;
+    });
+    return copy;
+  }
+  function render(key){
+    var list = sorted(key);
+    var rl = document.getElementById("ranking-list");
+    rl.className = "rank-list fade-swap";
+    rl.setAttribute("data-metric", key);
+    if(!list.length){
+      rl.innerHTML = "<p style='text-align:center;color:#7a756a;padding:40px;'>データがありません</p>";
+      document.getElementById("ranking-more").textContent = "";
+      document.getElementById("ranking-tab-desc").textContent = TAB_DESC[key] || "";
+      return;
+    }
+    var html = "";
+    for(var i=0;i<list.length;i++){
+      var x = list[i];
+      var isFirst = (i===0);
+      var tag = x.closed ? '<span class="closed-tag">閉店</span>' : "";
+      var href = articleUrl(x.slug);
+      var hasArticle = !!href;
+      var val = fmt(x[key]);
+      var nameHtml = hasArticle
+        ? '<a class="name-link" href="'+esc(href)+'">'+esc(x.name)+' <span class="go-arrow">›</span></a>'
+        : '<span class="plain-name">'+esc(x.name)+'</span>';
+      var chips = "";
+      if(x.pref || x.name){
+        var q = encodeURIComponent(String(x.name||"") + (x.pref ? " "+x.pref : ""));
+        chips += '<a class="chip" href="https://www.google.com/maps/search/?api=1&query='+q+'" target="_blank" rel="noopener">MAP</a>';
+      }
+      if(x.official) chips += '<a class="chip" href="'+esc(x.official)+'" target="_blank" rel="noopener">公式</a>';
+      html += '<div class="rank-row'+(isFirst?" rank-first":"")+(hasArticle?" has-link":"")+'">'
+        + '<div class="pos num">'+(i+1)+(isFirst?'<span class="pos-crown">★</span>':'')+'</div>'
+        + '<div class="info">'
+          + '<div class="nm">'+nameHtml+tag+'</div>'
+          + '<div class="pl">'+buildPlace(x)
+            + (chips ? ' <span style="white-space:nowrap;margin-left:6px;">'+chips+'</span>' : '')
+            + '</div>'
+          + '<div class="subs-sp"><span class="c-total">総合<b>'+fmt(x.total)+'</b></span><span class="c-cospa">コスパ<b>'+fmt(x.cospa)+'</b></span><span class="c-taipa">タイパ<b>'+fmt(x.taipa)+'</b></span></div>'
+        + '</div>'
+        + '<div class="subs"><span class="c-total">総合<b>'+fmt(x.total)+'</b></span><span class="c-cospa">コスパ<b>'+fmt(x.cospa)+'</b></span><span class="c-taipa">タイパ<b>'+fmt(x.taipa)+'</b></span></div>'
+        + '<div class="score num">'+val+'<span class="s">'+UNIT[key]+'</span></div>'
+        + '</div>';
+    }
+    rl.innerHTML = html;
+    document.getElementById("ranking-tab-desc").textContent = TAB_DESC[key] || "";
+    document.getElementById("ranking-more").textContent = "全 "+list.length+" 施設";
+  }
+
+  var tabs = document.getElementById("ranking-tabs");
+  tabs.addEventListener("click", function(e){
+    var btn = e.target.closest(".tab");
+    if(!btn) return;
+    var all = tabs.querySelectorAll(".tab");
+    for(var i=0;i<all.length;i++){
+      all[i].classList.remove("active");
+      all[i].setAttribute("aria-selected","false");
+    }
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected","true");
+    current = btn.getAttribute("data-key");
+    render(current);
+  });
+  render(current);
+})();
+
+</script>
+
 </article></main>
 <footer class="site-footer">
   <div class="wrap">
