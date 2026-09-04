@@ -8,6 +8,14 @@
     "type": "page"
   },
   {
+    "id": 0,
+    "slug": "reviews",
+    "title": "レビュー一覧",
+    "link": "https://sauna-cospa.com/reviews/",
+    "date": "2026-09-04T00:00:00",
+    "type": "page"
+  },
+  {
     "id": 581,
     "slug": "神戸-クアハウス",
     "title": "神戸 クアハウス",
