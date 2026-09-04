@@ -16,10 +16,15 @@
 | `{スラッグ}/index.html` | 各投稿・固定ページ（Unicode スラッグ、末尾スラッシュ相当） |
 | `sauna-daigaku.html` | 公開中の静的ファイルをそのまま保存（Amazon タグ `gomirachelin-22` を維持） |
 | `css/site.css` | 黒×金の共通ヘッダー / ナビ / フッター |
+| `reviews/index.html` | レビュー一覧（自作ページ。`scripts/gen_reviews.py` で生成） |
+| `scripts/gen_reviews.py` | レビュー一覧を作り直すスクリプト |
+| `docs/新規レビュー記事の追加手順.md` | サウナを1軒追加するときの手順書 |
 | `sitemap.xml` | 書き出した URL 一覧 |
 | `data/urls.json` | id / slug / title / link / date / type |
 
 ナビ: トップ / WHY / ランキング / サウナ大学 / お問い合わせ
+
+トップページの「レビュー一覧を見る」から `/reviews/` に行けます。
 
 デザインは `sauna-daigaku.html` の `:root`（黒地、金 `#d4a017`、Shippori Mincho / Oswald / Zen Kaku Gothic New）に合わせています。本文の点数・レビュー文・リンク（アフィリエイト含む）は WordPress の `content.rendered` をそのまま包んでいます。ランキング・TOP3・EVALUATION の GAS iframe と、お問い合わせの Google フォームもそのまま残しています。
 
