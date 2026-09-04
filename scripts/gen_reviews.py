@@ -164,6 +164,7 @@ page = """<!DOCTYPE html>
         <a href="/ランキング/">ランキング</a>
         <a href="/sauna-university/">サウナ大学</a>
         <a href="/お問い合わせ/">お問い合わせ</a>
+        <a href="/サイトマップ/">サイトマップ</a>
     </nav>
   </div>
 </header>
@@ -210,6 +211,7 @@ page = """<!DOCTYPE html>
           <li><a href="/%E9%81%8B%E5%96%B6%E8%80%85%E6%83%85%E5%A0%B1/">運営者情報</a></li>
           <li><a href="/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC/">プライバシーポリシー</a></li>
           <li><a href="/%E5%85%8D%E8%B2%AC%E4%BA%8B%E9%A0%85/">免責事項</a></li>
+          <li><a href="/%E3%82%B5%E3%82%A4%E3%83%88%E3%83%9E%E3%83%83%E3%83%97/">サイトマップ</a></li>
     </ul>
     <p class="footer-copy">© 2026 GOMIRACHELIN　コスパで選ぶ、全国サウナ正直ガイド</p>
   </div>
