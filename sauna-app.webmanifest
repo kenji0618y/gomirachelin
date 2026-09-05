@@ -1,0 +1,19 @@
+{
+  "name": "GOMIRACHELIN サウナ大学",
+  "short_name": "サウナ大学",
+  "description": "コスパで選ぶ、全国サウナ正直ガイド GOMIRACHELIN のサウナ大学",
+  "start_url": "/sauna-daigaku.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f0d0a",
+  "theme_color": "#0f0d0a",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "/sauna-icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
