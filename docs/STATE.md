@@ -4,6 +4,19 @@
 
 最終更新：2026-09-05
 
+## 公開サイトとGitHubの差分調査（2026-09-05・Claude）
+
+- ロードマップのフェーズ1「公開サイトとGitHubの差分一覧」をClaudeが担当し、`docs/公開サイトとGitHub差分.md` を新規作成した。
+- **作業環境から `https://sauna-cospa.com` へ到達できず**（curl・WebFetchとも `EGRESS_BLOCKED`）、本番側の直接確認はできなかった。GitHub側から確定できる事実と、本番側で確認が必要な項目を分けて記録した。
+- **最重要の発見**：`sauna-daigaku.html` がWordPressの `wp-content/uploads/2026/07/` にある写真**35枚**を直接参照している。ConoHa解約でサウナ大学の写真が全て表示されなくなるため、バックアップに `wp-content/uploads/` を必ず含める必要がある。
+- リポジトリ内の画像は `sauna-icon-180.png` の**1枚のみ**、PDFは0件であることを実測した。
+- GitHub mainに `robots.txt`、`.htaccess`、`favicon.ico`、`ads.txt` が無いことを確認した。本番側の有無は未確認。
+- WordPress固有URLの残存2件を特定した。`index.html` の `/?page_id=37`（→ `/why/`）と、`sauna-daigaku.html` の `/category/review/`（→ `/reviews/`）。
+- メニューは61ページ中59ページが同一構成で、`index.html` だけ「サウナ地図」を含む。地図は未ログインでは開けないため、揃え方は地図の公開方法決定後に判断する。
+- サイト内リンク切れは0件、フォルダ・`data/urls.json`・`sitemap.xml`・`FACILITIES` の整合も確認済み（`reviews` の `urls.json` 未登録1件のみ）。
+- 本調査はPRのみ作成しマージしていない。サイトのコード・画像は1ファイルも変更していない。ConoHa、GAS、Google Sheets、本番サイトも未変更。
+- 判断と理由: 本番へ到達できない事実を隠さず明記し、確認手順つきの空欄表を用意した。ConoHaにアクセスできる担当が追記すれば調査を完成できるため。
+
 ## ConoHaバックアップ準備（2026-09-05）
 
 - ロードマップのフェーズ1「ConoHaの棚卸しとバックアップ」を開始した。
