@@ -41,6 +41,13 @@
 - **Codexへの申し送りは変わらず最優先**：ConoHaバックアップに `wp-content/uploads/` を含めること（サウナ大学の写真35枚がここにしかない）。
 - 新ブランチ `claude/small-fixes-and-migration-prep` で作業。PR作成後マージはKenjiさんの判断を仰ぐ。ConoHa、GAS、Google Sheets、本番サイトは未変更。
 
+## 2026-09-05 Claude：PR #5とmainの衝突を解消
+
+- Grokが会話再開後にConoHaへ再ログインし、Web手元保存を完了させ（`wing-content`等を分割ダウンロード）、`docs/LIMIT_CHECKPOINT.md`等をmainへ反映したため、Claudeが作業中のPR #5ブランチ（`claude/small-fixes-and-migration-prep`）とmainの間で `docs/LIMIT_CHECKPOINT.md` に衝突が発生した。
+- mainを取り込んでマージし、衝突を解消（コミット`2bc61a7`）。Grok側の最新状況（Web手元保存完了、DB未実施、次の1手はphpMyAdmin）を残しつつ、Claude側が記録していたphpMyAdmin接続タイムアウトの詳細（原因の推測、未実施の切り分け方法、パスワード関連の安全上の注意）も「phpMyAdmin接続問題の記録」として残した。
+- **重要**：phpMyAdminのSQLエクスポートは、Grok側の記録でもまだ「次の1手」のままで未完了。Claudeのセッションで発生した接続タイムアウト（`phpmyadmin2003.conoha.ne.jp`が`ERR_CONNECTION_TIMED_OUT`）が解消しているかどうかは未確認。次にこの作業を再開するAI・利用者は、まずこの問題が起きていないか確認すること。
+- ConoHa、GAS、Google Sheets、本番サイトはClaude側では変更していない。PR #4・PR #5は引き続き未マージ（「マージせず止めて」の指示継続中）。
+
 ## 共通の更新方法
 
 - 作業前に `AGENTS.md` と `docs/STATE.md` を読む。
