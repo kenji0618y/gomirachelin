@@ -11,6 +11,7 @@
 - `docs/STATE.md` と `docs/LIMIT_CHECKPOINT.md` を先に更新し、現在の作業、外部変更、ブランチ・コミット・PR、未保存作業、次の1手、戻し方を残す。
 - 外部サービス変更やPR作成・マージの直後にも記録し、セッション終了まで先送りしない。
 - 全AI共通ルールの唯一の正文は `AGENTS.md`。Claude用 `CLAUDE.md` は `@AGENTS.md`、Gemini用 `GEMINI.md` は `@./AGENTS.md` の1行だけで正文をimportする。GrokとCursorは `AGENTS.md` を直接読むため専用ファイルを置かない。
+- この一元化と `docs/LIMIT_CHECKPOINT.md` はGitHubのmainへ反映済み。今後、共通ルールを変えるときは `AGENTS.md` だけを編集する。
 
 ## 2026-09-05 Claudeセッションからの引き継ぎ
 
