@@ -9,9 +9,11 @@
 - 全体ロードマップのフェーズ1「ConoHaの棚卸しとバックアップ」を進行中。
 - ConoHaの対象ドメインは `sauna-cospa.com`。
 - ファイルマネージャーで `public_html/sauna-cospa.com` を読み取り確認済み。ルート表示は88項目、902 KB。WordPressの `wp-admin`、`wp-content`、`wp-includes` が存在する。
+- バックアップ保存先と手順は準備済み。ConoHaのログイン期限が切れたため、再ログイン後に自動バックアップ、DB、Web、DNS、メールの順で確認する。
 
 ## 最後に完了した操作
 
+- `gomirachelin-work/backups/conoha/2026-09-05/` と `docs/ConoHaバックアップ手順.md` を作成し、全体ロードマップの次の1手を更新した。
 - AI共通ルールを `AGENTS.md` へ一元化し、利用制限前の保存ルールを追加してGitHubのmainへ反映した。
 - Claude用とGemini用のファイルは `AGENTS.md` を読み込む1行だけにした。GrokとCursorの専用ファイルは不要なため削除した。
 - PR #3をmainへマージし、`sauna-app.webmanifest` と `sauna-icon-180.png` を追加した。
@@ -21,7 +23,7 @@
 ## 外部サービスの状態
 
 - GitHub：PR #3に加え、AIルール一元化と本チェックポイント文書をmainへ反映済み。AIルールの変更は直接コミットで、未保存作業なし。
-- ConoHa：ログインして読み取り確認しただけ。ファイル、WordPress、DNS、メール設定は未変更。バックアップのダウンロードは未実施。
+- ConoHa：ログイン期限切れで現在はログイン画面。以前の読み取り確認以降、ファイル、WordPress、DNS、メール設定は未変更。バックアップのダウンロードは未実施。
 - GAS：地図v91。未ログインではGoogleログイン画面になるため、一般公開方法は未解決。
 - Google Sheets：変更なし。
 
