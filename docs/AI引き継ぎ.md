@@ -4,6 +4,14 @@
 
 このファイルは、Codex、Claude、Geminiなど複数のAIで作業するときに、会話だけでは失われる重要事項を共有するための記録です。
 
+## 2026-09-05 利用制限への対応
+
+- 利用者は、突然利用制限に達してもGrok、Claude、Gemini、Codexが作業を継続できることを最優先で希望している。
+- 全AIは `AGENTS.md` の利用制限ルールに従う。残り約20%以下、コンテキスト約80%以上、警告表示時は新しい作業を止める。
+- `docs/STATE.md` と `docs/LIMIT_CHECKPOINT.md` を先に更新し、現在の作業、外部変更、ブランチ・コミット・PR、未保存作業、次の1手、戻し方を残す。
+- 外部サービス変更やPR作成・マージの直後にも記録し、セッション終了まで先送りしない。
+- 全AI共通ルールの唯一の正文は `AGENTS.md`。Claude用 `CLAUDE.md` は `@AGENTS.md`、Gemini用 `GEMINI.md` は `@./AGENTS.md` の1行だけで正文をimportする。GrokとCursorは `AGENTS.md` を直接読むため専用ファイルを置かない。
+
 ## 2026-09-05 Claudeセッションからの引き継ぎ
 
 確認元：Claude Codeセッション `session_012z7Kpw3eTFZuubAjTQe91B`
