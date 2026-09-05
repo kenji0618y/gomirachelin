@@ -39,3 +39,12 @@
 
 - ConoHa本番はそのまま。手元ファイルを消しても公開サイトは残る。
 - リストアしていないので、`backup_data_web` の後処理は不要。
+
+
+## 2026-09-06 07:50 Codexチェックポイント
+
+- Web主要データは `web/extracted/sauna-cospa.com/` へ解凍済み。8,450ファイル、189,625,554 bytes、同名内容の衝突0件。
+- `wp-content/uploads` 440ファイル、サウナ大学元画像45枚を確認済み。
+- Web残り10項目とDB SQLが未取得。次はConoHaへ再ログインし、phpMyAdminからDBをエクスポートする。
+- 本番、DNS、DB、GASは変更していない。
+- `docs/STATE.md` と `docs/AI引き継ぎ.md` はGitHub mainへ更新済み。
