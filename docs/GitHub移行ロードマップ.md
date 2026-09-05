@@ -16,10 +16,10 @@ ConoHaからGitHub中心の運用へ安全に移行しながら、地図・ラ�
 
 ## 一目で見る現在地
 
-- **完了**：地図バージョン91、GitHubメニューへの地図追加、AI共通ルール、ロードマップ作成。
+- **完了**：地図バージョン91、GitHubメニューへの地図追加、AI共通ルール、ロードマップ作成、サウナ大学の不足2ファイル追加。
 - **今ここ**：フェーズ1「ConoHaの棚卸しとバックアップ」。ConoHaには変更を加えない。
 - **公開前のブロッカー**：現在のGAS地図は未ログイン状態でGoogleログイン画面になる。一般訪問者向けの公開方法が決まるまで、本番メニューへ反映しない。
-- **次の3件**：一般公開できる地図方式の決定、ConoHaバックアップ、Claudeブランチから必要ファイルだけを選んで統合。
+- **次の3件**：一般公開できる地図方式の決定、ConoHaバックアップ、公開サイトとGitHubの差分一覧作成。
 - **移行と並行して進めること**：施設データの不整合確認、地図の座標補完、ランキング更新の簡略化。
 - **移行後に継続すること**：レビュー追加、スマートフォン表示、アクセス解析、SEO、問い合わせと広告リンクの点検。
 
@@ -54,7 +54,7 @@ HTMLの見える化版：`docs/roadmap.html`
 目安：2週間
 
 - 不足しているページと画像だけをGitHubへ追加する。
-- 既知の不足ファイル `sauna-app.webmanifest` と `sauna-icon-180.png` を確認する。
+- `sauna-app.webmanifest` と `sauna-icon-180.png` はPR #3で追加済み。残る不足ファイルを確認する。
 - フォルダーを整理する前に、全URLとリンク先の対応表を作る。
 - 公開中のGASソースを、秘密情報を含めず `gas/` に保存する。
 - 不要ファイルはすぐ削除せず、候補一覧を作ってから小分けに整理する。
@@ -115,7 +115,7 @@ HTMLの見える化版：`docs/roadmap.html`
 ### 優先A：移行と同時に確認する
 
 - 一般訪問者が開ける地図の公開方法を決める。候補は、読み取り専用の公開GASを分ける方法と、GitHub側へ静的地図を作る方法。
-- Claudeブランチ `claude/grok-stopped-tznre4` は丸ごとマージせず、必要なファイルを個別に確認して取り込む。
+- Claudeブランチ `claude/grok-stopped-tznre4` は丸ごとマージしない。安全確認済みの2ファイルはPR #3で個別に取り込み済み。有用なドキュメントは必要になった時点で個別に確認する。
 - ランキング・地図・レビューで施設数、重複、閉店・閉館の扱いを統一する。
 - 10評価項目の定義差（⑤・⑦・⑧）を確認し、表記と計算方法をそろえる。
 - 「タイパ」が `0.0` の施設を確認し、未入力か意図した値かを整理する。
@@ -124,7 +124,8 @@ HTMLの見える化版：`docs/roadmap.html`
 
 ### 優先B：GitHub Pagesのテスト公開前に直す
 
-- Claudeブランチにある2件のリンク修正、`sauna-app.webmanifest`、`sauna-icon-180.png`、`404.html` を確認して個別に取り込む。
+- `sauna-app.webmanifest` と `sauna-icon-180.png` はPR #3で追加し、GitHub側のリンク切れ2件を解消済み。
+- `404.html` は不要なHTMLサイトマップへのリンクを3か所含むため、GitHub Pagesの公開方式が決まるまで保留する。採用時はサイトマップ導線を削除してから使う。
 - `.nojekyll` はGitHub Pagesの公開方法が決まった時点で必要性を確認する。
 - `CNAME` はDNSのバックアップと復旧手順が完成するまで追加しない。
 - 10項目別ランキングを、1か所のデータから更新できるようにする。
@@ -132,7 +133,6 @@ HTMLの見える化版：`docs/roadmap.html`
 - WordPress固有の `/?page_id=37` を静的な `/why/` へ変更する。
 - `sauna-daigaku.html` と `sauna-university/index.html` の役割を整理する。
 - WordPressの `wp-content/uploads` を参照している画像をGitHub側へ移す。
-- 不足している `sauna-app.webmanifest` と `sauna-icon-180.png` を補う。
 - 検索エンジン用の `sitemap.xml` と `robots.txt` を確認する。サイトのメニューには追加しない。
 
 ### 優先C：移行後も続ける運用
@@ -150,6 +150,7 @@ HTMLの見える化版：`docs/roadmap.html`
 - GitHubトップのメニューへ「サウナ地図」を追加した。
 - `AGENTS.md`、`CLAUDE.md`、`GEMINI.md` にMarkdown更新ルールを追加した。
 - `docs/STATE.md` と `docs/AI引き継ぎ.md` を整備した。
+- PR #3で `sauna-app.webmanifest` と `sauna-icon-180.png` だけをmainへ追加し、GitHub側のリンク切れ2件を解消した。既存ファイル、ConoHa本番、DNSは変更していない。
 
 ## 現在の次の作業
 
