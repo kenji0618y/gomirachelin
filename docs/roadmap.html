@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GOMIRACHELIN 全体ロードマップ</title>
+  <style>
+    :root {
+      --ink: #17150f;
+      --muted: #6d6757;
+      --paper: #f7f4eb;
+      --card: #fffdf7;
+      --line: #d8d1bd;
+      --gold: #a87812;
+      --gold-light: #f2e3b8;
+      --green: #2f6d4f;
+      --green-light: #deeee5;
+      --blue: #315f87;
+      --blue-light: #e2edf6;
+      --red: #9f4237;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+      line-height: 1.55;
+    }
+    button { font: inherit; }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 56px; }
+    .topbar { border-top: 5px solid var(--gold); background: var(--ink); color: #fff; }
+    .topbar .wrap { padding: 22px 0; }
+    .eyebrow { margin: 0 0 5px; color: #dfca91; font-size: 13px; font-weight: 700; letter-spacing: .08em; }
+    h1 { margin: 0; font-size: clamp(25px, 4vw, 40px); line-height: 1.2; }
+    .subtitle { margin: 8px 0 0; color: #d9d5ca; }
+    .status-grid { display: grid; grid-template-columns: 1.35fr repeat(3, minmax(120px, .55fr)); gap: 12px; margin: 20px 0; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+    .now { padding: 18px 20px; border-left: 6px solid var(--gold); }
+    .now-label { color: var(--gold); font-size: 13px; font-weight: 800; }
+    .now strong { display: block; margin-top: 3px; font-size: 20px; }
+    .stat { display: grid; place-content: center; min-height: 94px; padding: 12px; text-align: center; }
+    .stat b { font-size: 25px; }
+    .stat span { color: var(--muted); font-size: 12px; }
+    .next { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; margin-bottom: 24px; padding: 16px 18px; background: var(--gold-light); border: 1px solid #d8bf7c; border-radius: 14px; }
+    .next-badge { padding: 7px 10px; color: white; background: var(--gold); border-radius: 999px; font-size: 12px; font-weight: 800; }
+    .next p { margin: 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin: 30px 0 12px; }
+    h2 { margin: 0; font-size: 22px; }
+    .hint { margin: 0; color: var(--muted); font-size: 13px; }
+    .timeline { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .phase {
+      min-height: 122px;
+      padding: 14px 12px;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+    }
+    .phase:hover, .phase:focus-visible { border-color: var(--gold); outline: 3px solid var(--gold-light); }
+    .phase.done { background: var(--green-light); border-color: #aacdb9; }
+    .phase.current { background: var(--gold-light); border: 2px solid var(--gold); }
+    .phase-no { display: block; color: var(--muted); font-size: 12px; font-weight: 800; }
+    .phase-name { display: block; margin: 7px 0; font-weight: 800; }
+    .phase-time { color: var(--muted); font-size: 12px; }
+    .phase-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 12px; padding: 20px; }
+    .phase-detail h3 { margin: 0 0 6px; font-size: 20px; }
+    .phase-detail p { margin: 0; color: var(--muted); }
+    .phase-detail ul { margin: 0; padding-left: 20px; }
+    .month-road { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+    .month { padding: 13px; border-top: 5px solid var(--line); background: var(--card); border-radius: 8px; }
+    .month.active { border-top-color: var(--gold); }
+    .month b { display: block; margin-bottom: 5px; font-size: 13px; }
+    .month span { color: var(--muted); font-size: 12px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 7px; }
+    .filter { padding: 7px 13px; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+    .filter[aria-pressed="true"] { color: #fff; background: var(--ink); border-color: var(--ink); }
+    .lanes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .lane { padding: 18px; }
+    .lane h3 { margin: 0 0 5px; font-size: 17px; }
+    .lane-sub { margin: 0 0 13px; color: var(--muted); font-size: 12px; }
+    .task { display: flex; gap: 9px; padding: 10px 0; border-top: 1px solid var(--line); }
+    .task:first-of-type { border-top: 0; }
+    .dot { flex: 0 0 10px; width: 10px; height: 10px; margin-top: 7px; border-radius: 50%; background: var(--gold); }
+    .later .dot { background: var(--blue); }
+    .ongoing .dot { background: var(--green); }
+    .task p { margin: 0; font-size: 14px; }
+    .done-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .done-item { padding: 13px; background: var(--green-light); border: 1px solid #aacdb9; border-radius: 10px; font-size: 13px; }
+    .gate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+    .gate div { padding: 14px; color: var(--red); background: #fff5f2; border: 1px solid #e4b9b2; border-radius: 10px; font-size: 13px; }
+    footer { margin-top: 28px; padding-top: 14px; color: var(--muted); border-top: 1px solid var(--line); font-size: 12px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 900px) {
+      .status-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .now { grid-column: 1 / -1; }
+      .timeline { grid-template-columns: repeat(2, 1fr); }
+      .phase-detail, .lanes { grid-template-columns: 1fr; }
+      .month-road { grid-template-columns: repeat(3, 1fr); }
+      .done-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 20px, 1180px); }
+      .status-grid { grid-template-columns: 1fr; }
+      .now { grid-column: auto; }
+      .timeline, .month-road, .done-list, .gate { grid-template-columns: 1fr; }
+      .next { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <p class="eyebrow">GOMIRACHELIN PROJECT BOARD</p>
+      <h1>これからやること</h1>
+      <p class="subtitle">移行とサイト改善を、一つの画面で確認するロードマップ</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="status-grid" aria-label="現在の状況">
+      <div class="card now"><span class="now-label">現在地</span><strong>フェーズ1：ConoHaの棚卸し・バックアップ</strong><span>ConoHaには変更を加えず、まず復旧できる状態を作る</span></div>
+      <div class="card stat"><b>1 / 7</b><span>フェーズ完了</span></div>
+      <div class="card stat"><b>約半年</b><span>ConoHa利用可能期間</span></div>
+      <div class="card stat"><b>30日</b><span>切替後の監視期間</span></div>
+    </section>
+
+    <aside class="next"><span class="next-badge">次の1手</span><p><strong>ConoHaのファイル・データベース・DNS・メール設定を、変更せずに確認してバックアップする。</strong></p></aside>
+
+    <section>
+      <div class="section-head"><div><h2>移行の7フェーズ</h2><p class="hint">工程を押すと詳細が切り替わります</p></div></div>
+      <div class="timeline" id="timeline">
+        <button class="phase done" data-phase="0"><span class="phase-no">0 · 完了</span><span class="phase-name">準備</span><span class="phase-time">9月5日まで</span></button>
+        <button class="phase current" data-phase="1"><span class="phase-no">1 · 今ここ</span><span class="phase-name">棚卸し・保存</span><span class="phase-time">1週間</span></button>
+        <button class="phase" data-phase="2"><span class="phase-no">2</span><span class="phase-name">GitHub補完</span><span class="phase-time">2週間</span></button>
+        <button class="phase" data-phase="3"><span class="phase-no">3</span><span class="phase-name">テスト公開</span><span class="phase-time">2週間</span></button>
+        <button class="phase" data-phase="4"><span class="phase-no">4</span><span class="phase-name">切替準備</span><span class="phase-time">1週間</span></button>
+        <button class="phase" data-phase="5"><span class="phase-no">5</span><span class="phase-name">切替・監視</span><span class="phase-time">30日</span></button>
+        <button class="phase" data-phase="6"><span class="phase-no">6</span><span class="phase-name">ConoHa終了</span><span class="phase-time">期限1か月前</span></button>
+      </div>
+      <div class="card phase-detail" aria-live="polite">
+        <div><span class="now-label" id="detailStatus">今ここ</span><h3 id="detailTitle">棚卸し・バックアップ</h3><p id="detailPurpose">不足を把握し、いつでも元へ戻せる状態を作ります。</p></div>
+        <ul id="detailTasks"><li>公開フォルダーを丸ごと保存</li><li>WordPressデータベースと画像を保存</li><li>DNS・ドメイン・メール設定を記録</li><li>公開URLとGitHubを比較</li></ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><h2>半年の目安</h2><p class="hint">問題が見つかったら無理に次へ進めません</p></div></div>
+      <div class="month-road">
+        <div class="month active"><b>1か月目</b><span>棚卸し・全バックアップ</span></div>
+        <div class="month"><b>2か月目</b><span>不足補完・フォルダー整理</span></div>
+        <div class="month"><b>3か月目</b><span>テスト公開・表示修正</span></div>
+        <div class="month"><b>4か月目</b><span>ドメイン準備・切替</span></div>
+        <div class="month"><b>5か月目</b><span>30日監視・改善</span></div>
+        <div class="month"><b>6か月目</b><span>最終確認・ConoHa終了</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><h2>サイト改善ToDo</h2><p class="hint">移行以外に、あとで進める予定の作業</p></div><div class="filters" aria-label="ToDo絞り込み"><button class="filter" data-filter="all" aria-pressed="true">すべて</button><button class="filter" data-filter="now" aria-pressed="false">移行と同時</button><button class="filter" data-filter="later" aria-pressed="false">公開前</button><button class="filter" data-filter="ongoing" aria-pressed="false">移行後</button></div></div>
+      <div class="lanes">
+        <article class="card lane now-lane" data-group="now"><h3>優先A：移行と同時</h3><p class="lane-sub">データの土台をそろえる</p><div class="task"><span class="dot"></span><p>施設数・重複・閉店扱いを統一</p></div><div class="task"><span class="dot"></span><p>10評価項目⑤・⑦・⑧の定義を確認</p></div><div class="task"><span class="dot"></span><p>タイパ0.0の施設を確認</p></div><div class="task"><span class="dot"></span><p>地図の座標未登録施設を補完</p></div><div class="task"><span class="dot"></span><p>GASとSheetsのバックアップを保存</p></div></article>
+        <article class="card lane later" data-group="later"><h3>優先B：テスト公開前</h3><p class="lane-sub">表示と更新作業を整える</p><div class="task"><span class="dot"></span><p>10項目別ランキングをデータ1か所から更新</p></div><div class="task"><span class="dot"></span><p>レビュー一覧を共通メニューへ追加</p></div><div class="task"><span class="dot"></span><p>WordPress固有URLを静的URLへ変更</p></div><div class="task"><span class="dot"></span><p>サウナ大学の重複ページと画像を整理</p></div><div class="task"><span class="dot"></span><p>webmanifest・アイコン・robots.txtを補完</p></div></article>
+        <article class="card lane ongoing" data-group="ongoing"><h3>優先C：移行後も継続</h3><p class="lane-sub">更新しやすさと品質を保つ</p><div class="task"><span class="dot"></span><p>レビュー追加と一覧生成を簡単にする</p></div><div class="task"><span class="dot"></span><p>新規施設を同じデータから各画面へ反映</p></div><div class="task"><span class="dot"></span><p>PC・スマホ表示と404を定期確認</p></div><div class="task"><span class="dot"></span><p>アクセス解析とSEOを確認</p></div><div class="task"><span class="dot"></span><p>問い合わせ・広告リンクを確認</p></div></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head"><div><h2>完了したこと</h2><p class="hint">2026年9月5日時点</p></div></div>
+      <div class="done-list"><div class="done-item">✓ GAS地図 v91を公開</div><div class="done-item">✓ 県境・施設数・ピンを統合</div><div class="done-item">✓ FILTER欄を削除</div><div class="done-item">✓ GitHubへ地図メニュー追加</div><div class="done-item">✓ AI共通ルールを整備</div><div class="done-item">✓ STATEと引き継ぎを整備</div><div class="done-item">✓ 全体ロードマップを作成</div></div>
+    </section>
+
+    <section class="gate" aria-label="進めない条件"><div><strong>バックアップなし</strong><br>削除・移動・DNS変更をしない</div><div><strong>メール管理先が不明</strong><br>DNSを変更しない</div><div><strong>重大な404や表示崩れ</strong><br>独自ドメインを切り替えない</div></section>
+    <footer>最終更新：2026-09-05 ｜ 詳細と判断理由は「GitHub移行ロードマップ.md」と「STATE.md」に記録</footer>
+  </main>
+
+  <script>
+    const phaseData = {
+      0: ["完了", "準備", "GitHubを作業の正本として使える状態にしました。", ["GAS地図 v91を公開", "地図をGitHubメニューへ追加", "AI共通のMarkdown更新ルールを整備"]],
+      1: ["今ここ", "棚卸し・バックアップ", "不足を把握し、いつでも元へ戻せる状態を作ります。", ["公開フォルダーを丸ごと保存", "WordPressデータベースと画像を保存", "DNS・ドメイン・メール設定を記録", "公開URLとGitHubを比較"]],
+      2: ["予定", "GitHub補完・整理", "公開に必要なページと素材をGitHubへ集めます。", ["不足ページと画像を追加", "URL対応表を作成", "GASソースを保存", "不要ファイル候補を小分けに整理"]],
+      3: ["予定", "テスト公開", "本番と同じ操作を一時URLで確認します。", ["公開方法を決定", "PCとスマートフォンで確認", "画像・リンク・問い合わせを確認", "重大な404を0件にする"]],
+      4: ["予定", "ドメイン切替準備", "メールを守りながら公開先を変更できる手順を作ります。", ["DNS値を保存", "独自ドメインを検証", "Web用設定だけを変える計画", "ConoHaへ戻す手順を記録"]],
+      5: ["予定", "切替・30日監視", "sauna-cospa.comを切り替え、安定性を確認します。", ["DNSを切替", "HTTPSと主要ページを確認", "404とアクセス解析を監視", "修正はGitHubだけで実施"]],
+      6: ["予定", "ConoHa終了", "依存がないことを確認して費用を止めます。", ["依存0件を再確認", "最終バックアップを2か所に保存", "ドメインとメールへの影響を確認", "解約日をSTATE.mdへ記録"]]
+    };
+    document.querySelectorAll(".phase").forEach(button => button.addEventListener("click", () => {
+      document.querySelectorAll(".phase").forEach(item => item.classList.remove("current"));
+      button.classList.add("current");
+      const item = phaseData[button.dataset.phase];
+      document.getElementById("detailStatus").textContent = item[0];
+      document.getElementById("detailTitle").textContent = item[1];
+      document.getElementById("detailPurpose").textContent = item[2];
+      document.getElementById("detailTasks").innerHTML = item[3].map(task => `<li>${task}</li>`).join("");
+    }));
+    document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
+      document.querySelectorAll(".filter").forEach(item => item.setAttribute("aria-pressed", "false"));
+      button.setAttribute("aria-pressed", "true");
+      document.querySelectorAll(".lane").forEach(lane => lane.hidden = button.dataset.filter !== "all" && lane.dataset.group !== button.dataset.filter);
+    }));
+  </script>
+</body>
+</html>
