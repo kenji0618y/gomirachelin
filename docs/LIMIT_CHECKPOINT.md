@@ -12,13 +12,15 @@
 
 ## 最後に完了した操作
 
+- AI共通ルールを `AGENTS.md` へ一元化し、利用制限前の保存ルールを追加してGitHubのmainへ反映した。
+- Claude用とGemini用のファイルは `AGENTS.md` を読み込む1行だけにした。GrokとCursorの専用ファイルは不要なため削除した。
 - PR #3をmainへマージし、`sauna-app.webmanifest` と `sauna-icon-180.png` を追加した。
 - GitHub側の既知のリンク切れ2件を解消した。
 - Claudeブランチ全体はマージしていない。
 
 ## 外部サービスの状態
 
-- GitHub：PR #3までmainへ反映済み。
+- GitHub：PR #3に加え、AIルール一元化と本チェックポイント文書をmainへ反映済み。AIルールの変更は直接コミットで、未保存作業なし。
 - ConoHa：ログインして読み取り確認しただけ。ファイル、WordPress、DNS、メール設定は未変更。バックアップのダウンロードは未実施。
 - GAS：地図v91。未ログインではGoogleログイン画面になるため、一般公開方法は未解決。
 - Google Sheets：変更なし。
