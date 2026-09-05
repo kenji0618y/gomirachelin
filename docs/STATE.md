@@ -4,6 +4,18 @@
 
 最終更新：2026-09-05
 
+## 小さな修正とrobots.txt追加（2026-09-05・Claude、Codex利用制限中の引き継ぎ）
+
+- Codexが利用制限に達したため、ConoHaに触れない範囲の安全な修正をClaudeが引き継いだ。ConoHaへのログイン操作はClaude単体ではできない（ブラウザ操作の手段がない）ため、利用者と相談のうえ「私が安全なGitHub作業を先に進める」方針で合意した。
+- PR #4（`docs/公開サイトとGitHub差分.md`、未マージ）で見つけたWordPress固有URL2件を修正した。
+  - `index.html` の「WHY GOMIRACHELIN？」ボタン：`/?page_id=37` → `/why/`
+  - `sauna-daigaku.html` の「正直レビュー一覧」リンク：`https://sauna-cospa.com/category/review/` → `https://sauna-cospa.com/reviews/`
+- `reviews` を `data/urls.json` に登録した（`id:0`, `type:page`, 日付は`reviews/index.html`追加コミットの日時）。
+- `robots.txt` を新規作成した。中身は `User-agent: * / Allow: / / Sitemap: https://sauna-cospa.com/sitemap.xml` の最小構成。本番の実際の内容はPR #4のB-2でCodex側の確認待ち。本番に別内容がある場合はそちらを優先し、この最小版を上書きする。
+- 修正後、サイト内リンク切れ0件、`data/urls.json`とフォルダの整合を再確認。ヘッドレスブラウザでトップページの表示崩れがないことも確認した。
+- 変更ファイルは `index.html`、`sauna-daigaku.html`、`data/urls.json`、`robots.txt` の4件のみ。ConoHa、GAS、Google Sheets、本番サイトは未変更。
+- 判断と理由: ConoHaバックアップと独立して安全に進められる項目を先に片付けることで、Codex復帰後はバックアップ作業に専念できるようにした。
+
 ## ConoHaバックアップ準備（2026-09-05）
 
 - ロードマップのフェーズ1「ConoHaの棚卸しとバックアップ」を開始した。

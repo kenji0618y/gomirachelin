@@ -59,6 +59,14 @@
 - `404.html` は `/サイトマップ/` へのリンクを3か所含み、現在のConoHaでは自動適用されない。GitHub Pages方式が決まるまで保留する。
 - ConoHa本番は未変更。GitHub側だけでリンク切れ2件が解消した。
 
+## 2026-09-05 Claude：Codex利用制限中の小さな修正
+
+- Codexが利用制限に達したため、Kenjiさんの指示でClaudeが続きを担当。ConoHaへのログイン操作はClaudeにはできない（ブラウザ操作の手段がない）旨を伝え、「ConoHaに触れない安全なGitHub作業を先に進める」ことで合意した。
+- PR #4（未マージ）で見つけた即修正可能な2件を実施：`index.html` の `/?page_id=37`→`/why/`、`sauna-daigaku.html` の `/category/review/`→`/reviews/`（本文中はabsolute URL形式のまま維持）。
+- `reviews` を `data/urls.json` に登録。`robots.txt` を最小構成で新規作成（本番の実際の内容はPR #4のB-2で要確認、判明したらそちらを優先）。
+- **Codexへの申し送りは変わらず最優先**：ConoHaバックアップに `wp-content/uploads/` を含めること（サウナ大学の写真35枚がここにしかない）。
+- 新ブランチ `claude/small-fixes-and-migration-prep` で作業。PR作成後マージはKenjiさんの判断を仰ぐ。ConoHa、GAS、Google Sheets、本番サイトは未変更。
+
 ## 共通の更新方法
 
 - 作業前に `AGENTS.md` と `docs/STATE.md` を読む。
