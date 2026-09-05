@@ -19,7 +19,7 @@ ConoHaからGitHub中心の運用へ安全に移行しながら、地図・ラ�
 - **完了**：地図バージョン91、GitHubメニューへの地図追加、AI共通ルール、ロードマップ作成、サウナ大学の不足2ファイル追加。
 - **今ここ**：フェーズ1「ConoHaの棚卸しとバックアップ」。ConoHaには変更を加えない。
 - **公開前のブロッカー**：現在のGAS地図は未ログイン状態でGoogleログイン画面になる。一般訪問者向けの公開方法が決まるまで、本番メニューへ反映しない。
-- **次の3件**：一般公開できる地図方式の決定、ConoHaバックアップ、公開サイトとGitHubの差分一覧作成。
+- **次の3件**：ConoHaバックアップ、公開サイトとGitHubの差分一覧作成、一般公開できる地図方式の決定。
 - **移行と並行して進めること**：施設データの不整合確認、地図の座標補完、ランキング更新の簡略化。
 - **移行後に継続すること**：レビュー追加、スマートフォン表示、アクセス解析、SEO、問い合わせと広告リンクの点検。
 
@@ -32,7 +32,7 @@ HTMLの見える化版：`docs/roadmap.html`
 - GitHubに静的サイトの主要ファイルを保存。
 - GAS地図をバージョン91へ更新。
 - GitHubトップのメニューへ「サウナ地図」を追加。
-- `AGENTS.md`、`CLAUDE.md`、`GEMINI.md` と共通ルールを整備。
+- `AGENTS.md` を全AI共通ルールの唯一の正文として整備。`CLAUDE.md` と `GEMINI.md` は1行importのみ。
 - `docs/STATE.md` と `docs/AI引き継ぎ.md` を整備。
 
 完了条件：GitHubを作業の正本として使える。
@@ -41,6 +41,7 @@ HTMLの見える化版：`docs/roadmap.html`
 
 目安：1週間
 
+- 保存先 `gomirachelin-work/backups/conoha/2026-09-05/` と安全手順を準備済み。ConoHaの再ログイン待ち。
 - ConoHaの公開フォルダーを一度だけ丸ごとバックアップする。
 - WordPressデータベースと `wp-content/uploads` をバックアップする。
 - DNS、独自ドメイン、メールのMX・TXT設定を記録する。
@@ -148,7 +149,7 @@ HTMLの見える化版：`docs/roadmap.html`
 - GAS地図をバージョン91へ更新し、都道府県境界、掲載施設数、施設ピンを1枚に統合した。
 - 地図のFILTER欄を削除した。
 - GitHubトップのメニューへ「サウナ地図」を追加した。
-- `AGENTS.md`、`CLAUDE.md`、`GEMINI.md` にMarkdown更新ルールを追加した。
+- `AGENTS.md` に全AI共通のMarkdown更新ルールを一元化した。ClaudeとGeminiは1行import、GrokとCursorは `AGENTS.md` を直接読む。
 - `docs/STATE.md` と `docs/AI引き継ぎ.md` を整備した。
 - PR #3で `sauna-app.webmanifest` と `sauna-icon-180.png` だけをmainへ追加し、GitHub側のリンク切れ2件を解消した。既存ファイル、ConoHa本番、DNSは変更していない。
 
