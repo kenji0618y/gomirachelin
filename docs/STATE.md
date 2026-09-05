@@ -15,7 +15,8 @@
 - 公開画面で東京都を縮尺9以上まで拡大し、位置登録24施設、未登録23施設、画面上の施設ピン54個を確認。草加健康センターのピンから施設情報、料金、Googleマップ、公式サイトが開ける表示を確認した。
 - GitHubのトップ `index.html` のメインメニューへ「サウナ地図」を追加し、mainへコミット `1f2cad1` で反映済み。ConoHaの公開サイトへのアップロードは未実施のため、`sauna-cospa.com` のメニューにはまだ反映されていない。
 - Claudeの共有セッションを確認し、要点を `docs/AI引き継ぎ.md` に記録した。
-- `AGENTS.md`、`.cursor/rules/update-project-md.mdc`、`CLAUDE.md`、`GEMINI.md` に、すべてのAIが毎回Markdownを更新する共通ルールを追加した。GitHubへの反映を進行中。
+- `AGENTS.md`、`.cursor/rules/update-project-md.mdc`、`CLAUDE.md`、`GEMINI.md` に、すべてのAIが毎回Markdownを更新する共通ルールを追加し、GitHubのmainへ反映済み。
+- Claudeとの作業内容は `docs/AI引き継ぎ.md` としてGitHubのmainへ保存済み。
 - 判断と理由: 県別集計と施設ピンを同じLeaflet地図にまとめ、縮尺で表示を切り替える。県境と全体件数を見やすく保ちながら、拡大時に個別施設を選べるため。
 - 判断と理由: AIごとの会話だけに依存せず、`AGENTS.md` とMarkdownへ作業状態を残す。Codex、Claude、Geminiの間で同じ状態から再開できるようにするため。
 
