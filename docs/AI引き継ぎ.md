@@ -34,6 +34,15 @@
 - `gas/github_post.gs` はGitHub書き込み権限を持つトークンを使うため、現在のGAS本体と投稿運用を確認してから別作業で安全性と失敗時の復旧を検証する。
 - 判断と理由: 丸ごとマージではなく選択統合にする。撤回済み機能、時期尚早なDNS設定、現在の方針と異なる古い記録をmainへ混ぜないため。
 
+## 2026-09-05 Claudeとの選択統合
+
+- Claudeへ読み取り確認を依頼し、「リンク切れ2件」は `sauna-daigaku.html` が参照する `sauna-app.webmanifest` と `sauna-icon-180.png` の不足そのものだと確認した。
+- Claudeが最新mainから `claude/fix-sauna-daigaku-404-assets` を作成し、この2ファイルだけを追加するPR #3を作成。CodexがGitHubの差分を再確認してmainへマージした。
+- PR #3は新規2ファイル、既存ファイル変更0件、1コミット、競合なし。`CNAME`、`.nojekyll`、`404.html`、サイトマップ、`gas/github_post.gs` は含めていない。
+- 黒×金のGアイコンはClaudeが作成した代替品。元のアイコンが見つかった場合は差し替え可能。
+- `404.html` は `/サイトマップ/` へのリンクを3か所含み、現在のConoHaでは自動適用されない。GitHub Pages方式が決まるまで保留する。
+- ConoHa本番は未変更。GitHub側だけでリンク切れ2件が解消した。
+
 ## 共通の更新方法
 
 - 作業前に `AGENTS.md` と `docs/STATE.md` を読む。
