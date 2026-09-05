@@ -130,7 +130,7 @@
       <div class="card stat"><b>30日</b><span>切替後の監視期間</span></div>
     </section>
 
-    <aside class="next"><span class="next-badge">次の1手</span><p><strong>一般訪問者がログインせずに開ける地図の公開方法を決める。</strong> その後、ConoHaのバックアップへ進みます。</p></aside>
+    <aside class="next"><span class="next-badge">次の1手</span><p><strong>ConoHaへ再ログインし、Web・DB・DNS・メールを手元へバックアップする。</strong> 保存先と安全手順は準備済みです。</p></aside>
     <aside class="blocker"><span class="blocker-badge">公開前の問題</span><p><strong>現在のGAS地図は未ログイン状態ではGoogleログイン画面になります。</strong> GitHubにリンクはありますが、ConoHa本番には未反映です。解決するまで本番メニューへ追加しません。</p></aside>
 
     <section>
@@ -173,7 +173,7 @@
 
     <section>
       <div class="section-head"><div><h2>完了したこと</h2><p class="hint">2026年9月5日時点</p></div></div>
-      <div class="done-list"><div class="done-item">✓ GAS地図 v91を公開</div><div class="done-item">✓ 県境・施設数・ピンを統合</div><div class="done-item">✓ FILTER欄を削除</div><div class="done-item">✓ GitHubへ地図メニュー追加</div><div class="done-item">✓ AI共通ルールを整備</div><div class="done-item">✓ STATEと引き継ぎを整備</div><div class="done-item">✓ 全体ロードマップを作成</div><div class="done-item">✓ PR #3でリンク切れ2件を解消</div></div>
+      <div class="done-list"><div class="done-item">✓ GAS地図 v91を公開</div><div class="done-item">✓ 県境・施設数・ピンを統合</div><div class="done-item">✓ FILTER欄を削除</div><div class="done-item">✓ GitHubへ地図メニュー追加</div><div class="done-item">✓ AI共通ルールをAGENTS.mdへ一元化</div><div class="done-item">✓ STATEと引き継ぎを整備</div><div class="done-item">✓ 全体ロードマップを作成</div><div class="done-item">✓ PR #3でリンク切れ2件を解消</div></div>
     </section>
 
     <section class="gate" aria-label="進めない条件"><div><strong>バックアップなし</strong><br>削除・移動・DNS変更をしない</div><div><strong>メール管理先が不明</strong><br>DNSを変更しない</div><div><strong>重大な404や表示崩れ</strong><br>独自ドメインを切り替えない</div></section>
@@ -182,8 +182,8 @@
 
   <script>
     const phaseData = {
-      0: ["完了", "準備", "GitHubを作業の正本として使える状態にしました。", ["GAS地図 v91を公開", "地図をGitHubメニューへ追加", "AI共通のMarkdown更新ルールを整備"]],
-      1: ["今ここ", "棚卸し・バックアップ", "不足を把握し、いつでも元へ戻せる状態を作ります。", ["公開フォルダーを丸ごと保存", "WordPressデータベースと画像を保存", "DNS・ドメイン・メール設定を記録", "公開URLとGitHubを比較"]],
+      0: ["完了", "準備", "GitHubを作業の正本として使える状態にしました。", ["GAS地図 v91を公開", "地図をGitHubメニューへ追加", "AI共通ルールをAGENTS.mdへ一元化"]],
+      1: ["今ここ", "棚卸し・バックアップ", "保存先と安全手順は準備済み。ConoHaへ再ログインして取得します。", ["自動バックアップ状況を確認", "公開フォルダーを丸ごと保存", "WordPressデータベースと画像を保存", "DNS・ドメイン・メール設定を記録", "公開URLとGitHubを比較"]],
       2: ["予定", "GitHub補完・整理", "公開に必要なページと素材をGitHubへ集めます。", ["不足ページと画像を追加", "URL対応表を作成", "GASソースを保存", "不要ファイル候補を小分けに整理"]],
       3: ["予定", "テスト公開", "本番と同じ操作を一時URLで確認します。", ["公開方法を決定", "未ログインで地図を開けることを確認", "PCとスマートフォンで確認", "画像・リンク・問い合わせを確認", "重大な404を0件にする"]],
       4: ["予定", "ドメイン切替準備", "メールを守りながら公開先を変更できる手順を作ります。", ["DNS値を保存", "独自ドメインを検証", "Web用設定だけを変える計画", "ConoHaへ戻す手順を記録"]],
