@@ -10,6 +10,7 @@
 - `AGENTS.md` に、残り約20%以下、コンテキスト約80%以上、利用制限警告時の強制チェックポイントと、作業中の区切りごとの記録ルールを追加した。
 - `AGENTS.md` を全AI共通ルールの唯一の正文にした。ClaudeとGeminiは `AGENTS.md` を直接自動読込しないため、`CLAUDE.md` と `GEMINI.md` には規則を複製せず、公式のimport記法を1行だけ置いた。
 - GrokとCursorは `AGENTS.md` を直接読めるため、不要な `GROK.md` と `.cursor/rules/update-project-md.mdc` は削除した。
+- 一元化した `AGENTS.md`、1行importの `CLAUDE.md`・`GEMINI.md`、`docs/LIMIT_CHECKPOINT.md`、状態記録をGitHubのmainへ反映した。GitHubに残っていたCursor専用ルールも削除済み。PRは作らず、小さな直接コミットで反映した。
 - `docs/LIMIT_CHECKPOINT.md` を新設し、現在の作業、外部サービス状態、次の1手、中止・復旧条件を保存した。
 - Codexのリセット後の確認値は、5時間枠2%使用、週間枠0%使用、利用可能なリセットクレジット0件。数値は2026-09-05確認時点で、アカウント全体の使用状況として変動する。
 - 判断と理由: セッション終了時だけの記録では突然の利用制限に対応できないため、外部変更直後と制限警告時に先にMarkdownを保存する。
