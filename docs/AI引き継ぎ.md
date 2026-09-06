@@ -1,8 +1,17 @@
 # AI引き継ぎ
 
-最終更新：2026-09-06 12:55
+最終更新：2026-09-06 22:15
 
 このファイルは、Codex、Claude、Geminiなど複数のAIで作業するときに、会話だけでは失われる重要事項を共有するための記録です。
+
+## 2026-09-06 22:15 Codex ログイン不要の静的地図を追加
+
+- `map/index.html` に県境と施設ピンを統合した静的地図を追加。`google.script.run` 0件、FILTER欄0件で、Googleログイン不要。
+- 施設データは元175行、同名重複を除いて174施設、閉店記録3件、座標あり54施設。県境は47都道府県すべてを確認した。
+- 全60ページのメニューをGAS URLから静的地図へ変更。トップは `map/`、1階層下のページは `../map/` とし、GitHub Pagesのリポジトリ配下URLでも地図リンクが成立する。
+- ローカルブラウザーで表示とOpenStreetMapタイルを確認済み。GitHub Pages公開URLではpush後に確認する。
+- GAS v91の全員公開は予備として維持。ConoHa、DNS、GAS本体、Sheets、`CNAME` は未変更。
+- 次の1手：GitHubへpush後、`https://kenji0618y.github.io/gomirachelin/map/` を未ログインで確認する。サイト全体のルート絶対パス問題は引き続き公開方式の判断が必要。
 
 ## 2026-09-06 Claude【Codexへ相談】GitHub Pagesのパス問題で方式選択が必要
 
