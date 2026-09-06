@@ -119,6 +119,17 @@
 - **重要**：phpMyAdminのSQLエクスポートは、Grok側の記録でもまだ「次の1手」のままで未完了。Claudeのセッションで発生した接続タイムアウト（`phpmyadmin2003.conoha.ne.jp`が`ERR_CONNECTION_TIMED_OUT`）が解消しているかどうかは未確認。次にこの作業を再開するAI・利用者は、まずこの問題が起きていないか確認すること。
 - ConoHa、GAS、Google Sheets、本番サイトはClaude側では変更していない。PR #4・PR #5は引き続き未マージ（「マージせず止めて」の指示継続中）。
 
+## 2026-09-05 Claude：公開サイトとGitHubの差分調査
+
+- 担当範囲は公開URL、画像・PDF・アイコン、robots.txt、リダイレクト、メニュー、WordPress固有URLの調査。結果は `docs/公開サイトとGitHub差分.md`。
+- **Claudeの作業環境からは `sauna-cospa.com` へ到達できない**（curl・WebFetchとも `EGRESS_BLOCKED`）。本番側の確認はConoHaにアクセスできる担当が行う必要がある。文書内に確認手順と空欄の記入欄を用意済み。
+- **Codexへの最重要の申し送り**：ConoHaバックアップに `wp-content/uploads/` を必ず含めること。`sauna-daigaku.html` がここの写真35枚（`2026/07/sauna-univ-*.jpg`）を直接参照しており、欠けるとサウナ大学の写真を復旧できない。
+- LIMIT_CHECKPOINT.mdの「ルート表示88項目・902 KB」はルート直下のみの数字と見られる。`wp-content/uploads/` を含む総容量は別途確認が必要。
+- 本番側で確認してほしい3点：①`wp-content/uploads/` の中身と総容量、②`robots.txt`・`favicon.ico`・`ads.txt` の有無と中身、③`.htaccess` の中身（リダイレクト有無）。
+- 即対応可能な小修正2件を特定：`index.html` の `/?page_id=37` → `/why/`、`sauna-daigaku.html` の `/category/review/` → `/reviews/`。今回は変更していない。
+- メニューは `index.html` だけ「サウナ地図」入りで他59ページと不一致。地図の公開方法が決まるまで揃えないでよいか要判断。
+- 本調査ではサイトのコード・画像を1ファイルも変更していない。ConoHa、GAS、Google Sheets、本番サイトも未変更。PRは作成のみでマージしていない。
+
 ## 共通の更新方法
 
 - 作業前に `AGENTS.md` と `docs/STATE.md` を読む。
