@@ -374,3 +374,12 @@ WordPress（`https://sauna-cospa.com`）から書き出したもので、ConoHa�
 - `CNAME`、DNS、ConoHa、GAS、Google Sheetsは変更していない。GitHub Pagesの独自ドメイン切替も未実施。
 - 次はサウナ大学が参照するConoHa画像35件をGitHub内画像へ移す準備と、GAS地図を一般訪問者が開ける方式の決定を進める。
 - 判断理由：公開先を変えずに戻せる小さな変更だけを先行し、GitHubテスト公開に必要な土台を安全に整えるため。
+
+## サウナ大学画像の移行準備（2026-09-06 12:45 Codex）
+
+- ConoHaバックアップから、`sauna-daigaku.html` が実際に参照するJPEG 35枚を `assets/images/sauna-university/` へコピーした。合計8,127,222 bytes。
+- 35枚すべて画像として読み込めることを確認し、`manifest.csv` にファイル名・容量・SHA-256を保存した。
+- ローカルの `sauna-daigaku.html` は旧ConoHa URL 35件をGitHub内パスへ置換済み。旧URLの残りは0件。
+- 画像とHTML修正版はGitHubへ未反映。Chrome拡張機能のファイルURL権限が無効で、GitHubの複数ファイル選択が拒否されたため。
+- 次の1手：Chrome拡張機能の「ファイルのURLへのアクセスを許可する」をオンにし、画像35枚を先にGitHubへアップロードする。存在確認後にHTMLを反映する。
+- 詳細は `docs/サウナ大学画像移行.md`。ConoHa、DNS、GAS、Sheetsは変更していない。
