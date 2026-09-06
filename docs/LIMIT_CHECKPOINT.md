@@ -1,6 +1,6 @@
 # 利用制限前チェックポイント
 
-最終更新：2026-09-06 12:30 JST前後
+最終更新：2026-09-06 12:45 JST前後
 
 状態：WebとDBの復旧用バックアップ完成。次はフェーズ2の差分整理。
 
@@ -57,3 +57,12 @@
 - 未保存のGitHub編集画面はない。ConoHa、DNS、GAS、Google Sheets、`CNAME` は未変更。
 - 次の1手：バックアップ済みのサウナ大学元画像45枚から、実際に参照中の35件をGitHub用に準備し、HTML参照先を小分けで変更する。
 - 戻し方：GitHubの該当コミットを個別にrevertする。独自ドメインは未切替なので、現在のConoHa公開サイトには影響しない。
+
+## 2026-09-06 サウナ大学画像準備チェックポイント（Codex）
+
+- ローカル準備完了：`assets/images/sauna-university/` に画像35枚と `manifest.csv`。合計8,127,222 bytes、破損0件。
+- ローカルの `sauna-daigaku.html` は旧ConoHa画像URL35件をGitHub内パスへ変更済み。旧URL残り0件。
+- GitHub未反映：画像35枚、`manifest.csv`、HTML修正版。
+- ブロッカー：Chrome拡張機能のファイルURL権限が無効で `fileChooser.setFiles` が拒否された。
+- 次の1手：Chrome拡張機能の「ファイルのURLへのアクセスを許可する」をオンにする。画像を先にアップロードし、確認後にHTMLを反映する。
+- ConoHa、DNS、GAS、Google Sheets、`CNAME` は未変更。
