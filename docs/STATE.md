@@ -383,3 +383,14 @@ WordPress（`https://sauna-cospa.com`）から書き出したもので、ConoHa�
 - 画像とHTML修正版はGitHubへ未反映。Chrome拡張機能のファイルURL権限が無効で、GitHubの複数ファイル選択が拒否されたため。
 - 次の1手：Chrome拡張機能の「ファイルのURLへのアクセスを許可する」をオンにし、画像35枚を先にGitHubへアップロードする。存在確認後にHTMLを反映する。
 - 詳細は `docs/サウナ大学画像移行.md`。ConoHa、DNS、GAS、Sheetsは変更していない。
+
+## サウナ大学画像のGitHub移行完了（2026-09-06 12:55 Codex）
+
+- GitHub main の `assets/images/sauna-university/` へ、検証済みJPEG 35枚と `manifest.csv` を追加した（コミット `146bfa6`）。
+- GitHubのフォルダー画面で対象35枚と `manifest.csv` がすべて存在することを確認した。
+- `sauna-daigaku.html` の旧ConoHa画像URL 35件をGitHub内パスへ変更した（コミット `0f89c3b`）。
+- HTMLのコミット差分は `sauna-daigaku.html` 1ファイルだけ、35行追加・35行削除であることを確認した。
+- GitHub側では画像とHTMLの移行が完了した。現在公開中のConoHa、DNS、GAS、Google Sheets、`CNAME` は変更していない。
+- 次の1手：一般訪問者がGoogleログインなしで使える地図方式を決定し、その後GitHub Pagesのテスト公開へ進む。
+- 判断理由：画像を先に配置・確認してからHTMLを切り替える順序にし、参照先の画像切れを防ぐため。
+- 戻し方：問題があれば `0f89c3b` を戻すとHTMLだけ旧ConoHa画像URLへ戻せる。画像追加 `146bfa6` は表示に影響しないため、そのまま保管してもよい。

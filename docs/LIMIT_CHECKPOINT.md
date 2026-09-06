@@ -66,3 +66,12 @@
 - ブロッカー：Chrome拡張機能のファイルURL権限が無効で `fileChooser.setFiles` が拒否された。
 - 次の1手：Chrome拡張機能の「ファイルのURLへのアクセスを許可する」をオンにする。画像を先にアップロードし、確認後にHTMLを反映する。
 - ConoHa、DNS、GAS、Google Sheets、`CNAME` は未変更。
+
+## 2026-09-06 サウナ大学画像移行完了チェックポイント（Codex）
+
+- GitHub mainへ画像35枚と `manifest.csv` を追加済み（`146bfa6`）。フォルダー画面で36ファイルを確認した。
+- `sauna-daigaku.html` の旧ConoHa画像URL 35件をGitHub内パスへ変更済み（`0f89c3b`）。差分は1ファイル・35行追加・35行削除。
+- 未保存のGitHub編集はない。ローカルの画像・HTML・記録文書は保持している。
+- ConoHa、DNS、GAS、Google Sheets、`CNAME` は未変更。
+- 次の1手：未ログインで利用できる地図方式を決め、GitHub Pagesのテスト公開へ進む。
+- 戻し方：`0f89c3b` をrevertしてHTML参照だけ旧ConoHa URLへ戻す。

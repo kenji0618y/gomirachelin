@@ -130,7 +130,7 @@
       <div class="card stat"><b>30日</b><span>切替後の監視期間</span></div>
     </section>
 
-    <aside class="next"><span class="next-badge">次の1手</span><p><strong>準備済みのサウナ大学画像35枚をGitHubへアップロードする。</strong> Chrome拡張機能のファイルURL権限をオンにした後、画像を先に確認し、HTMLを反映します。</p></aside>
+    <aside class="next"><span class="next-badge">次の1手</span><p><strong>一般訪問者がログインなしで使える地図方式を決める。</strong> 方式を決めた後、GASソースを保存し、GitHub Pagesのテスト公開で確認します。</p></aside>
     <aside class="blocker"><span class="blocker-badge">公開前の問題</span><p><strong>現在のGAS地図は未ログイン状態ではGoogleログイン画面になります。</strong> GitHubにリンクはありますが、ConoHa本番には未反映です。解決するまで本番メニューへ追加しません。</p></aside>
 
     <section>
@@ -146,7 +146,7 @@
       </div>
       <div class="card phase-detail" aria-live="polite">
         <div><span class="now-label" id="detailStatus">今ここ</span><h3 id="detailTitle">GitHub補完・整理</h3><p id="detailPurpose">公開差分を整理し、テストに必要なものだけをそろえます。</p></div>
-        <ul id="detailTasks"><li>✓ 差分を追加・URL変更・保留へ分類</li><li>✓ Pages基本ファイルとWHYリンクを反映</li><li>画像35枚の選別・検証・HTML修正を準備済み</li><li>画像をGitHubへアップロード</li><li>一般公開できる地図方式を決定</li><li>GASソースを安全に保存</li></ul>
+        <ul id="detailTasks"><li>✓ 差分を追加・URL変更・保留へ分類</li><li>✓ Pages基本ファイルとWHYリンクを反映</li><li>✓ サウナ大学画像35枚とHTML参照をGitHubへ移行</li><li>一般公開できる地図方式を決定</li><li>GASソースを安全に保存</li><li>GitHub Pagesで主要画面をテスト</li></ul>
       </div>
     </section>
 
@@ -166,14 +166,14 @@
       <div class="section-head"><div><h2>サイト改善ToDo</h2><p class="hint">移行以外に、あとで進める予定の作業</p></div><div class="filters" aria-label="ToDo絞り込み"><button class="filter" data-filter="all" aria-pressed="true">すべて</button><button class="filter" data-filter="now" aria-pressed="false">移行と同時</button><button class="filter" data-filter="later" aria-pressed="false">公開前</button><button class="filter" data-filter="ongoing" aria-pressed="false">移行後</button></div></div>
       <div class="lanes">
         <article class="card lane now-lane" data-group="now"><h3>優先A：移行と同時</h3><p class="lane-sub">公開の問題とデータの土台を整える</p><div class="task"><span class="dot"></span><p>ログイン不要で開ける地図の方式を決定</p></div><div class="task"><span class="dot"></span><p>施設数・重複・閉店扱いを統一</p></div><div class="task"><span class="dot"></span><p>10評価項目⑤・⑦・⑧の定義を確認</p></div><div class="task"><span class="dot"></span><p>タイパ0.0の施設を確認</p></div><div class="task"><span class="dot"></span><p>地図の座標未登録施設を補完</p></div><div class="task"><span class="dot"></span><p>GASとSheetsのバックアップを保存</p></div></article>
-        <article class="card lane later" data-group="later"><h3>優先B：テスト公開前</h3><p class="lane-sub">表示と更新作業を整える</p><div class="task"><span class="dot"></span><p>✓ 404・.nojekyll・robots.txtを追加</p></div><div class="task"><span class="dot"></span><p>CNAMEはDNS準備完了まで追加しない</p></div><div class="task"><span class="dot"></span><p>10項目別ランキングをデータ1か所から更新</p></div><div class="task"><span class="dot"></span><p>レビュー一覧を共通メニューへ追加</p></div><div class="task"><span class="dot"></span><p>✓ トップのWordPress固有URLを静的URLへ変更</p></div><div class="task"><span class="dot"></span><p>サウナ大学の重複ページと画像を整理</p></div></article>
+        <article class="card lane later" data-group="later"><h3>優先B：テスト公開前</h3><p class="lane-sub">表示と更新作業を整える</p><div class="task"><span class="dot"></span><p>✓ 404・.nojekyll・robots.txtを追加</p></div><div class="task"><span class="dot"></span><p>CNAMEはDNS準備完了まで追加しない</p></div><div class="task"><span class="dot"></span><p>10項目別ランキングをデータ1か所から更新</p></div><div class="task"><span class="dot"></span><p>レビュー一覧を共通メニューへ追加</p></div><div class="task"><span class="dot"></span><p>✓ トップのWordPress固有URLを静的URLへ変更</p></div><div class="task"><span class="dot"></span><p>✓ サウナ大学画像35枚をGitHubへ移行</p></div><div class="task"><span class="dot"></span><p>サウナ大学の重複ページを整理</p></div></article>
         <article class="card lane ongoing" data-group="ongoing"><h3>優先C：移行後も継続</h3><p class="lane-sub">更新しやすさと品質を保つ</p><div class="task"><span class="dot"></span><p>レビュー追加と一覧生成を簡単にする</p></div><div class="task"><span class="dot"></span><p>新規施設を同じデータから各画面へ反映</p></div><div class="task"><span class="dot"></span><p>PC・スマホ表示と404を定期確認</p></div><div class="task"><span class="dot"></span><p>アクセス解析とSEOを確認</p></div><div class="task"><span class="dot"></span><p>問い合わせ・広告リンクを確認</p></div></article>
       </div>
     </section>
 
     <section>
       <div class="section-head"><div><h2>完了したこと</h2><p class="hint">2026年9月6日時点</p></div></div>
-      <div class="done-list"><div class="done-item">✓ GAS地図 v91を公開</div><div class="done-item">✓ 県境・施設数・ピンを統合</div><div class="done-item">✓ FILTER欄を削除</div><div class="done-item">✓ GitHubへ地図メニュー追加</div><div class="done-item">✓ AI共通ルールをAGENTS.mdへ一元化</div><div class="done-item">✓ STATEと引き継ぎを整備</div><div class="done-item">✓ Web 8,450ファイルを保存・検証</div><div class="done-item">✓ WordPress DB 18テーブルをSQL保存</div><div class="done-item">✓ PR #3でリンク切れ2件を解消</div><div class="done-item">✓ Pages基本ファイルを追加</div><div class="done-item">✓ トップのWHYリンクを静的URLへ修正</div></div>
+      <div class="done-list"><div class="done-item">✓ GAS地図 v91を公開</div><div class="done-item">✓ 県境・施設数・ピンを統合</div><div class="done-item">✓ FILTER欄を削除</div><div class="done-item">✓ GitHubへ地図メニュー追加</div><div class="done-item">✓ AI共通ルールをAGENTS.mdへ一元化</div><div class="done-item">✓ STATEと引き継ぎを整備</div><div class="done-item">✓ Web 8,450ファイルを保存・検証</div><div class="done-item">✓ WordPress DB 18テーブルをSQL保存</div><div class="done-item">✓ PR #3でリンク切れ2件を解消</div><div class="done-item">✓ Pages基本ファイルを追加</div><div class="done-item">✓ トップのWHYリンクを静的URLへ修正</div><div class="done-item">✓ サウナ大学画像35枚をGitHubへ移行</div></div>
     </section>
 
     <section class="gate" aria-label="進めない条件"><div><strong>バックアップなし</strong><br>削除・移動・DNS変更をしない</div><div><strong>メール管理先が不明</strong><br>DNSを変更しない</div><div><strong>重大な404や表示崩れ</strong><br>独自ドメインを切り替えない</div></section>
@@ -184,7 +184,7 @@
     const phaseData = {
       0: ["完了", "準備", "GitHubを作業の正本として使える状態にしました。", ["GAS地図 v91を公開", "地図をGitHubメニューへ追加", "AI共通ルールをAGENTS.mdへ一元化"]],
       1: ["完了", "棚卸し・バックアップ", "Web主要データとDB SQLを保存・検証しました。完全スナップショットとの差10項目も記録済みです。", ["自動バックアップ状況を確認済み", "Web 8,450ファイルを解凍・検証済み", "WordPressデータベース18テーブルをSQL保存", "DNS・メール・契約を記録", "公開差分を作成"]],
-      2: ["今ここ", "GitHub補完・整理", "公開差分を整理し、GitHub Pagesテストに必要なものだけをそろえます。", ["✓ 差分を追加・URL変更・保留へ分類", "✓ Pages基本ファイルとWHYリンクを反映", "✓ サウナ大学画像35枚を選別・検証", "画像をGitHubへアップロード", "一般公開できる地図方式を決定", "GASソースを安全に保存"]],
+      2: ["今ここ", "GitHub補完・整理", "公開差分を整理し、GitHub Pagesテストに必要なものだけをそろえます。", ["✓ 差分を追加・URL変更・保留へ分類", "✓ Pages基本ファイルとWHYリンクを反映", "✓ サウナ大学画像35枚とHTML参照をGitHubへ移行", "一般公開できる地図方式を決定", "GASソースを安全に保存", "GitHub Pagesで主要画面をテスト"]],
       3: ["予定", "テスト公開", "本番と同じ操作を一時URLで確認します。", ["公開方法を決定", "未ログインで地図を開けることを確認", "PCとスマートフォンで確認", "画像・リンク・問い合わせを確認", "重大な404を0件にする"]],
       4: ["予定", "ドメイン切替準備", "メールを守りながら公開先を変更できる手順を作ります。", ["DNS値を保存", "独自ドメインを検証", "Web用設定だけを変える計画", "ConoHaへ戻す手順を記録"]],
       5: ["予定", "切替・30日監視", "sauna-cospa.comを切り替え、安定性を確認します。", ["DNSを切替", "HTTPSと主要ページを確認", "404とアクセス解析を監視", "修正はGitHubだけで実施"]],
