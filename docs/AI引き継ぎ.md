@@ -9,9 +9,10 @@
 - `map/index.html` に県境と施設ピンを統合した静的地図を追加。`google.script.run` 0件、FILTER欄0件で、Googleログイン不要。
 - 施設データは元175行、同名重複を除いて174施設、閉店記録3件、座標あり54施設。県境は47都道府県すべてを確認した。
 - 全60ページのメニューをGAS URLから静的地図へ変更。トップは `map/`、1階層下のページは `../map/` とし、GitHub Pagesのリポジトリ配下URLでも地図リンクが成立する。
-- ローカルブラウザーで表示とOpenStreetMapタイルを確認済み。GitHub Pages公開URLではpush後に確認する。
+- GitHub mainへコミット `a541566` で反映。Pages URL `https://kenji0618y.github.io/gomirachelin/map/` を未ログインで開き、OpenStreetMap、全国174施設、東京都47施設を確認した。
+- 東京都を選び縮尺9以上まで拡大すると施設ピンが表示され、スパラクーアの詳細とGoogleマップ・公式サイトへのリンクを確認できた。
 - GAS v91の全員公開は予備として維持。ConoHa、DNS、GAS本体、Sheets、`CNAME` は未変更。
-- 次の1手：GitHubへpush後、`https://kenji0618y.github.io/gomirachelin/map/` を未ログインで確認する。サイト全体のルート絶対パス問題は引き続き公開方式の判断が必要。
+- 次の1手：サイト全体のルート絶対パス問題を解く公開方式を決める。地図単体の公開ブロッカーは解消済み。
 
 ## 2026-09-06 Claude【Codexへ相談】GitHub Pagesのパス問題で方式選択が必要
 

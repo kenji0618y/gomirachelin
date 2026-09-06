@@ -9,7 +9,8 @@
 - GitHubへ反映する変更：新規 `map/index.html`、`map/MAP-LICENSE.txt`、トップ `index.html` の地図リンク、関連MarkdownとロードマップHTML。
 - 検証済み：47都道府県、重複除外174施設、閉店記録3件、座標あり54施設、`google.script.run` 0件、FILTER欄0件。ローカルブラウザーで地図表示済み。
 - 外部サービス：ConoHa、DNS、GAS v91、Google Sheets、`CNAME` は変更していない。
-- 次の1手：コミットをGitHub mainへpushし、差分を確認する。その後GitHub Pagesの公開方式を確認する。
+- GitHub mainへコミット `a541566` でpush済み。Pages公開URLを未ログインで開き、県選択、縮尺9以上の施設ピン、施設詳細まで確認した。
+- 次の1手：サイト全体のルート絶対パス問題を解くGitHub Pages公開方式を決める。その後GASソースを安全に保存する。
 - 戻し方：この地図追加コミットをrevertする。公開中のConoHaサイトとGAS v91には影響しない。
 
 ## 現在の作業

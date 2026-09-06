@@ -130,7 +130,7 @@
       <div class="card stat"><b>30日</b><span>切替後の監視期間</span></div>
     </section>
 
-    <aside class="next"><span class="next-badge">次の1手</span><p><strong>静的地図をGitHub PagesのURLで確認する。</strong> 地図単体を未ログインで確認した後、サイト全体は方式A（リポジトリ名を <code>kenji0618y.github.io</code> へ変更）か方式B（テスト用サブドメイン <code>test.sauna-cospa.com</code>）を選びます。</p></aside>
+    <aside class="next"><span class="next-badge">次の1手</span><p><strong>サイト全体のGitHub Pages公開方式を決める。</strong> 方式A（リポジトリ名を <code>kenji0618y.github.io</code> へ変更）か方式B（テスト用サブドメイン <code>test.sauna-cospa.com</code>）を選びます。静的地図単体は公開確認済みです。</p></aside>
     <aside class="blocker"><span class="blocker-badge">公開前の問題</span><p><strong>GitHub Pagesの無料URLはフォルダ形式のため、このサイトのリンクとCSSが全部切れます（該当1,434か所）。</strong> サイトの不具合ではなくURLの形式の問題です。方式AかBを決めれば解決します。詳細は <code>docs/GitHubPagesのパス問題と方式選択.md</code>。</p></aside>
     <aside class="next"><span class="next-badge">地図更新済み</span><p><strong>ログイン不要の静的地図をGitHubへ追加しました（2026-09-06）。</strong> 47都道府県・174施設を確認し、全60ページのメニューをGASからGitHub内の地図へ変更しました。</p></aside>
 
@@ -147,7 +147,7 @@
       </div>
       <div class="card phase-detail" aria-live="polite">
         <div><span class="now-label" id="detailStatus">今ここ</span><h3 id="detailTitle">GitHub補完・整理</h3><p id="detailPurpose">公開差分を整理し、テストに必要なものだけをそろえます。</p></div>
-        <ul id="detailTasks"><li>✓ 差分を追加・URL変更・保留へ分類</li><li>✓ Pages基本ファイルとWHYリンクを反映</li><li>✓ サウナ大学画像35枚とHTML参照をGitHubへ移行</li><li>✓ ログイン不要の静的地図を追加</li><li>✓ 全60ページを静的地図へ接続</li><li>静的地図をPages URLで確認</li><li>GASソースを安全に保存</li><li>サイト全体のPages方式を決定</li></ul>
+        <ul id="detailTasks"><li>✓ 差分を追加・URL変更・保留へ分類</li><li>✓ Pages基本ファイルとWHYリンクを反映</li><li>✓ サウナ大学画像35枚とHTML参照をGitHubへ移行</li><li>✓ ログイン不要の静的地図を追加</li><li>✓ 全60ページを静的地図へ接続</li><li>✓ 静的地図をPages URLで確認</li><li>GASソースを安全に保存</li><li>サイト全体のPages方式を決定</li></ul>
       </div>
     </section>
 
@@ -185,7 +185,7 @@
     const phaseData = {
       0: ["完了", "準備", "GitHubを作業の正本として使える状態にしました。", ["GAS地図 v91を公開", "地図をGitHubメニューへ追加", "AI共通ルールをAGENTS.mdへ一元化"]],
       1: ["完了", "棚卸し・バックアップ", "Web主要データとDB SQLを保存・検証しました。完全スナップショットとの差10項目も記録済みです。", ["自動バックアップ状況を確認済み", "Web 8,450ファイルを解凍・検証済み", "WordPressデータベース18テーブルをSQL保存", "DNS・メール・契約を記録", "公開差分を作成"]],
-      2: ["今ここ", "GitHub補完・整理", "公開差分を整理し、GitHub Pagesテストに必要なものだけをそろえます。", ["✓ 差分を追加・URL変更・保留へ分類", "✓ Pages基本ファイルとWHYリンクを反映", "✓ サウナ大学画像35枚とHTML参照をGitHubへ移行", "✓ ログイン不要の静的地図を追加", "✓ 全60ページを静的地図へ接続", "静的地図をPages URLで確認", "GASソースを安全に保存", "サイト全体のPages方式を決定"]],
+      2: ["今ここ", "GitHub補完・整理", "公開差分を整理し、GitHub Pagesテストに必要なものだけをそろえます。", ["✓ 差分を追加・URL変更・保留へ分類", "✓ Pages基本ファイルとWHYリンクを反映", "✓ サウナ大学画像35枚とHTML参照をGitHubへ移行", "✓ ログイン不要の静的地図を追加", "✓ 全60ページを静的地図へ接続", "✓ 静的地図をPages URLで確認", "GASソースを安全に保存", "サイト全体のPages方式を決定"]],
       3: ["予定", "テスト公開", "本番と同じ操作を一時URLで確認します。", ["✓ 公開方法を決定", "✓ 未ログインで地図を開けることを確認", "PCとスマートフォンで確認", "画像・リンク・問い合わせを確認", "重大な404を0件にする"]],
       4: ["予定", "ドメイン切替準備", "メールを守りながら公開先を変更できる手順を作ります。", ["DNS値を保存", "独自ドメインを検証", "Web用設定だけを変える計画", "ConoHaへ戻す手順を記録"]],
       5: ["予定", "切替・30日監視", "sauna-cospa.comを切り替え、安定性を確認します。", ["DNSを切替", "HTTPSと主要ページを確認", "404とアクセス解析を監視", "修正はGitHubだけで実施"]],

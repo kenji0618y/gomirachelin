@@ -19,7 +19,7 @@ ConoHaからGitHub中心の運用へ安全に移行しながら、地図・ラ�
 - **完了**：地図バージョン91、ログイン不要のGitHub静的地図、AI共通ルール、ロードマップ作成、Pages基本ファイル、サウナ大学画像35枚のGitHub移行、ConoHaのWeb・DBバックアップ、全60ページの静的地図メニュー統一。
 - **今ここ**：フェーズ1の復旧用バックアップが完成。フェーズ2「GitHubの不足を補完・整理」へ進む。
 - **公開前のブロッカー**：GitHub Pagesは有効だが、サイト全体のルート絶対パス1,434か所がリポジトリ配下URLでは404になる。静的地図単体は相対パスで対応済み。
-- **次の3件**：静的地図のPages URL確認、GitHub Pagesの全体公開方式決定、GASソースの安全な保存。
+- **次の3件**：GitHub Pagesの全体公開方式決定、GASソースの安全な保存、主要ページのPC・スマートフォン確認。
 - **移行と並行して進めること**：施設データの不整合確認、地図の座標補完、ランキング更新の簡略化。
 - **移行後に継続すること**：レビュー追加、スマートフォン表示、アクセス解析、SEO、問い合わせと広告リンクの点検。
 
@@ -154,6 +154,7 @@ HTMLの見える化版：`docs/roadmap.html`
 - GAS地図の公開設定を「全員」に変更し、未ログインで開けることを確認した（2026-09-06）。
 - サイトのメニューを持つ全60ページへ「サウナ地図」を統一追加した（2026-09-06）。
 - `map/index.html` にログイン不要の静的地図を追加し、全60ページのリンクをGAS URLから静的地図へ変更した。
+- Pages公開URLで未ログイン表示、東京都選択、縮尺9以上の施設ピン、施設詳細を確認した。
 - `AGENTS.md` に全AI共通のMarkdown更新ルールを一元化した。ClaudeとGeminiは1行import、GrokとCursorは `AGENTS.md` を直接読む。
 - `docs/STATE.md` と `docs/AI引き継ぎ.md` を整備した。
 - PR #3で `sauna-app.webmanifest` と `sauna-icon-180.png` だけをmainへ追加し、GitHub側のリンク切れ2件を解消した。既存ファイル、ConoHa本番、DNSは変更していない。
@@ -164,9 +165,9 @@ HTMLの見える化版：`docs/roadmap.html`
 
 ## 現在の次の作業
 
-1. 静的地図をPages URL `https://kenji0618y.github.io/gomirachelin/map/` で未ログイン確認する。
-2. **【判断待ち】GitHub Pagesのサイト全体の公開方式を決める。** 方式A（リポジトリ名を `kenji0618y.github.io` へ変更）か方式B（テスト用サブドメイン `test.sauna-cospa.com`）の詳細は `docs/GitHubPagesのパス問題と方式選択.md`。
-3. GASソースを秘密情報なしで `gas/` に保存する。
+1. **【判断待ち】GitHub Pagesのサイト全体の公開方式を決める。** 方式A（リポジトリ名を `kenji0618y.github.io` へ変更）か方式B（テスト用サブドメイン `test.sauna-cospa.com`）の詳細は `docs/GitHubPagesのパス問題と方式選択.md`。
+2. GASソースを秘密情報なしで `gas/` に保存する。
+3. 方式決定後、主要ページをPC・スマートフォンで確認する。
 
 ## 中止条件
 
