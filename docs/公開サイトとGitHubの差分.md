@@ -33,7 +33,7 @@
 - WordPress本体（`wp-admin` / `wp-content` / `wp-includes`）
 - `wp-content/uploads` の画像
 - WordPressカテゴリ `/category/review/`
-- GAS本体ソース（`gas/` なし）
+- GAS本体ソースは`gomirachelin-work/gas-backup-sanitized/` へ安全処理済みで準備（2026-09-06）。公開GitHubへの送信は明示承認待ち
 - Google Sheetsの全データ
 - `robots.txt`
 

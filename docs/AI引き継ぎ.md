@@ -1,8 +1,24 @@
 # AI引き継ぎ
 
-最終更新：2026-09-06 22:15
+最終更新：2026-09-06 22:35
 
 このファイルは、Codex、Claude、Geminiなど複数のAIで作業するときに、会話だけでは失われる重要事項を共有するための記録です。
+
+## 2026-09-06 22:35 Codex GAS v91ソースを安全にローカル保存
+
+- `gomirachelin-work/gas-backup-sanitized/` に `Code.gs`、`mapView.html`、`README.md` を準備した。`mapView.html` はFILTERなし・県境・施設数・施設ピン統合版。
+- 元ソースのGoogle Sheets ID 2種類は削除。メインDBは `_getSheetId()`、全施設統合DBはスクリプトプロパティ `IKITAI_SHEET_ID` で参照する形にした。
+- APIキー、WordPress認証情報、楽天API情報の実値は含まれていない。`Code.gs` はNode.js構文検査済み。
+- 公開リポジトリへの送信は、約8,800行のGASソース全体を公開する明示承認が必要なため保留。公開中GAS、Sheets、ConoHa、DNSは未変更。
+- 次の1手：GitHub Pagesの主要ページをPC・スマートフォンで確認し、公開ファイルの不足を最終確認する。
+
+## 2026-09-06 22:25 Codex GitHub Pagesのパス問題を方式Aで解消
+
+- リポジトリを `kenji0618y.github.io` へ改名し、正本URLを `https://github.com/kenji0618y/kenji0618y.github.io` へ変更した。旧GitHub URLは新URLへ転送される。
+- 公開URL `https://kenji0618y.github.io/` でトップのCSSとメニューが正常に表示され、`/why/`、`/ランキング/`、`/map/` へのリンクがルート直下を指すことを確認した。
+- `https://kenji0618y.github.io/map/` でログイン不要の地図、全国174施設、東京都47施設、47都道府県境界を確認した。
+- これによりルート絶対パス1,434か所の問題は解消。方式B（`test.sauna-cospa.com` のDNS追加）は実施しない。
+- ConoHa、DNS、メール、GAS、Sheets、`CNAME` は未変更。次の1手はGASソースを秘密情報なしで `gas/` に保存し、主要ページのPC・スマートフォン確認を続ける。
 
 ## 2026-09-06 22:15 Codex ログイン不要の静的地図を追加
 

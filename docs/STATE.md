@@ -2,7 +2,24 @@
 
 このファイルは、サイトの現在の状況やできていること、次にやることを記録するためのドキュメントです。
 
-最終更新：2026-09-06 22:15（Codex：ログイン不要の静的地図を追加）
+最終更新：2026-09-06 22:35（Codex：Pagesルート公開・GASソースをローカル保存）
+
+## GitHub PagesをルートURLで正常公開（2026-09-06・Codex）
+
+- リポジトリ名を `gomirachelin` から `kenji0618y.github.io` へ変更した。GitHubの旧リポジトリURLは新URLへ転送される。
+- GitHub Pagesの公開URLは `https://kenji0618y.github.io/` になった。トップ、CSS、メニュー、WHY・ランキング等のルート絶対パスが正しい場所を指すため、1,434か所のパス問題は一括解消した。
+- トップページと `https://kenji0618y.github.io/map/` を未ログインで開き、デザイン、主要メニュー、全国174施設、東京都47施設、47都道府県の境界を確認した。
+- ローカル作業コピー `gomirachelin-work/sync-repo` の `origin` も新リポジトリURLへ変更した。
+- 方式Aを選んだ理由：無料ですぐ実施でき、ConoHa、DNS、メール、GAS、Google Sheetsに触れずに検証できるため。方式Bのテスト用DNS追加は不要になった。
+- 外部サービスへの影響：ConoHa、DNS、メール、GAS、Google Sheets、`CNAME` は変更していない。独自ドメイン `sauna-cospa.com` は引き続きConoHa側を表示する。
+
+## GAS v91ソースを安全にローカル保存（2026-09-06・Codex）
+
+- `gomirachelin-work/gas-backup-sanitized/Code.gs` と `mapView.html` を準備した。地図は公開中のv91と同じ、FILTERなし・県境・施設数・施設ピン統合版。
+- `gas/README.md` に構成、復元時の設定、公開中GASへ自動反映されないことを記録した。
+- 元ソースに直接書かれていたGoogle Sheets ID 2種類はGitHub版から削除した。メインDBはバインド先、全施設統合DBはスクリプトプロパティ `IKITAI_SHEET_ID` から参照する。
+- APIキー、WordPress認証情報、楽天API情報の実値がないことを確認した。GAS公開URLのデプロイIDは一般公開済みURLのため残した。
+- `Code.gs` はNode.jsの構文検査に合格。公開リポジトリへの送信は、ソース全体を公開する明示承認が必要なため保留。公開中GAS、Sheets、ConoHa、DNSには変更を加えていない。
 
 ## ログイン不要の静的サウナ地図をGitHubへ追加（2026-09-06・Codex）
 

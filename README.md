@@ -6,7 +6,7 @@
 
 - **本番の WordPress は一切変更していません。** ログイン、投稿、削除、設定変更はしていません。
 - これらは、あとから ConoHa のドキュメントルートへアップロードするためのサイトファイルです。
-- Git の正本は非公開リポジトリ https://github.com/kenji0618y/gomirachelin です。**Git コマンドは覚えなくて大丈夫です。** 変更は grok bot 1 に頼んでください。
+- Git の正本は公開リポジトリ https://github.com/kenji0618y/kenji0618y.github.io です。**Git コマンドは覚えなくて大丈夫です。** 変更はAIに依頼し、`AGENTS.md` と作業記録を毎回更新してください。
 
 ## 中身
 
