@@ -162,8 +162,8 @@ HTMLの見える化版：`docs/roadmap.html`
 
 ## 現在の次の作業
 
-1. **リポジトリを公開（Public）に変更し、GitHub Pagesを有効にする**（Settings→General→Change repository visibility、次にSettings→Pagesで `main` / `/(root)`。ブラウザ操作が必要）。
-2. 一時URLでPC・スマートフォンから主要ページ・画像・リンク・404を確認する。
+1. **【判断待ち】GitHub Pagesの公開方式を決める。** リポジトリ公開とPages有効化は完了したが、無料URLがフォルダ形式（`kenji0618y.github.io/gomirachelin/`）のため、ルート絶対パス1,434か所が全部404になり表示できない。方式A（リポジトリ名を `kenji0618y.github.io` へ変更）か方式B（テスト用サブドメイン `test.sauna-cospa.com` を割り当て。Claude推奨）を選ぶ。詳細は `docs/GitHubPagesのパス問題と方式選択.md`。
+2. 方式決定後、一時URLでPC・スマートフォンから主要ページ・画像・リンク・404を確認する。
 3. GASソースを秘密情報なしで `gas/` に保存する。
 
 ## 中止条件
