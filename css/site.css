@@ -120,7 +120,7 @@ body.is-home .entry{max-width:none;padding:0}
     flex-direction:column;background:rgba(15,13,10,.96);
     border-bottom:1px solid var(--line);padding:12px 18px 18px;gap:2px;
   }
-  #nav-check:checked ~ .nav .nav-links{display:flex}
+  #nav-check:checked ~ .site-header .nav-links{display:flex}
 }
 
 /* embed-page: Sauna University iframe fills remaining viewport (header 64px, no preview banner) */
