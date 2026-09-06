@@ -1,37 +1,28 @@
 # 利用制限前チェックポイント
 
-最終更新：2026-09-06 00:30 JST前後（Codex）＋2026-09-05 Claudeのメモを統合
+最終更新：2026-09-06 12:45 JST前後
 
-状態：会話中断（利用者が寝に就く）。緊急の未完了操作なし。
+状態：WebとDBの復旧用バックアップ完成。次はフェーズ2の差分整理。
 
 ## 現在の作業
 
 - フェーズ1「ConoHaの棚卸しとバックアップ」。
-- Webファイルの手元保存は利用者が完了と報告。DB・管理画面のDNS/メール追記は未実施。
-- **DBのSQLエクスポート（phpMyAdmin）はまだ完了していない**。Claudeのセッションでは、ConoHaコントロールパネル経由・直接URLともに`phpmyadmin2003.conoha.ne.jp`が`ERR_CONNECTION_TIMED_OUT`でタイムアウトする問題が発生していた（下記「phpMyAdmin接続問題の記録」参照）。次にこの作業を再開する際は、まずこの問題が解消しているかを確認すること。
+- Web主要データとDB SQLを手元保存し、ハッシュ記録・構造確認まで完了。完全スナップショットとの差10項目は記録済み。
 
 ## 最後に完了した操作
 
 - ConoHa再ログイン。サーバー `wing-26-06-14-21-29`。
 - 自動バックアップ 2026-08-22〜2026-09-04、Web/Mail/DB全日リストア可。リストア未実行。
-- ファイルマネージャーで `public_html/sauna-cospa.com` を確認（88項目、この階層表示902 KB）。`reviews` と `robots.txt` は無い。
-- フォルダ一括ダウンロードはHTTP 504。`wp-content` → `wp-includes` → `wp-admin` → 残りの順で分割ダウンロードし、利用者が完了と報告。
-- 手元保存先の目安: `gomirachelin-work/backups/conoha/2026-09-05/web/`
+- 分割ZIPを `gomirachelin-work/backups/conoha/2026-09-05/web/` に保存し、`manifest.csv` にSHA-256を記録。
+- `web/extracted/sauna-cospa.com/` へ統合解凍。8,450ファイル、189,625,554 bytes、同名内容の衝突0件。
+- `wp-content/uploads` 440ファイル、サウナ大学の元画像45枚を確認。
+- ConoHaルート88項目のうち78項目を保存。施設5フォルダーとルート5ファイルはZIPに含まれておらず、追加取得が必要。
 - 本番の削除・上書き・リストア・DNS変更はしていない。
-- （Claude側）`index.html`、`sauna-daigaku.html`、`data/urls.json`、`robots.txt`の4ファイル修正をPR #5として作成（未マージ）。PR #4・PR #5とも複数回状態確認しているが、レビュー・コメント0件で変化なし。「マージせず止めて」の指示が継続中。
-
-## phpMyAdmin接続問題の記録（Claude、2026-09-05）
-
-- ConoHaコントロールパネルの「データベース」画面→「管理ツール」欄の`phpMyAdmin`リンクをクリックしても、直接URL入力でも、`phpmyadmin2003.conoha.ne.jp`が`ERR_CONNECTION_TIMED_OUT`でタイムアウトした。
-- 原因はConoHa側ではなく、利用者のネット回線・PC側（セキュリティソフト、ルーター等が該当ドメインをブロックしている可能性）と推測。ConoHa側の障害は未確認。
-- 提案したが**Claudeのセッション終了時点では未確認**の切り分け方法：①スマートフォンのモバイル回線で同じリンクを試す、②PCのセキュリティソフトを一時確認、③別のブラウザで試す。
-- 代替案：手動SQLエクスポートにこだわらず、ConoHaの「自動バックアップ」機能（Web/Mail/DB全日リストア可と確認済み）で十分とする案も提示した。
-- DBユーザー名`yux6k_x6j43h66`のパスワードは利用者が確認済み。**パスワードやSQLダンプの中身はこのMarkdownにもチャットにも記録していない**（安全のため）。
 
 ## 外部サービスの状態
 
-- GitHub: 本チェックポイントと引き継ぎを更新。PR #4（調査文書のみ）、PR #5（小さな安全修正）とも未マージのまま open。
-- ConoHa: ログイン済み。サーバー上のファイル・DBは未変更。
+- GitHub: 本チェックポイントと引き継ぎを更新。
+- ConoHa: セッション期限切れ。サーバー上のファイル・DBは未変更。
 - GAS v91 / Sheets: 変更なし。
 
 ## 未保存作業
@@ -41,33 +32,46 @@
 
 ## 次の1手
 
-1. phpMyAdminへ接続できるか再確認する（上記の切り分け方法を試す）。接続できたら現行DBをSQLエクスポートし、`.../database/` へ保存する。
-2. 手元webに `wp-config.php`、`.htaccess`、`wp-content/uploads` があるか目視する。
-3. ConoHaのドメイン・DNS・メール画面を追記する。
+1. `docs/公開サイトとGitHubの差分.md` をフェーズ2の追加・整理候補へ反映する。
+2. 一般訪問者がログインせず開ける地図方式を決める。
+3. GitHub Pagesのテスト公開に必要な不足ファイルを小分けで補う。
 
 ## 戻し方
 
 - ConoHa本番はそのまま。手元ファイルを消しても公開サイトは残る。
 - リストアしていないので、`backup_data_web` の後処理は不要。
-- バックアップが完成するまで、ConoHaの削除・移動・上書き、DNS変更、解約を行わない。
-- DBユーザーのパスワードリセット（鉛筆マーク）は絶対に使わない。本番WordPressのDB接続が壊れるリスクがあるため。
-- wp-config.phpは閲覧のみで、保存・上書きしない。
-- 地図が未ログインで開けるようになるまで、本番メニューへ地図リンクを追加しない。
-- 問題が起きた場合はConoHa本番をそのまま維持し、GitHub側の変更だけを見直す。
 
-## 2026-09-06 07:50 Codexチェックポイント
+## 2026-09-06 フェーズ2開始チェックポイント（Codex）
 
-- Web主要データは `web/extracted/sauna-cospa.com/` へ解凍済み。8,450ファイル、189,625,554 bytes、同名内容の衝突0件。
-- `wp-content/uploads` 440ファイル、サウナ大学元画像45枚を確認済み（PR #4で最優先と申し送りしていた項目）。
-- Web残り10項目とDB SQLが未取得。次はConoHaへ再ログインし、phpMyAdminからDBをエクスポートする。
-- 本番、DNS、DB、GASは変更していない。
-- `docs/STATE.md` と `docs/AI引き継ぎ.md` はGitHub mainへ更新済み。
+- フェーズ1のWeb・DBバックアップは完了。現在はフェーズ2「GitHub補完・整理」。
+- `docs/フェーズ2_補完整理計画.md` を作成し、次の1手をPages基本ファイルとWHYリンク修正に決定。
+- 外部サービス変更なし。ConoHa、DNS、GAS、Google Sheetsは未変更。
+- 次回は `.nojekyll`、`404.html`、`robots.txt`、`index.html` の修正案を作成し、表示とリンクを確認する。
+- 戻し方：この時点ではMarkdownだけの追加・更新なので、該当追記と新規計画書を戻せばよい。
 
+## 2026-09-06 フェーズ2基本ファイル反映後チェックポイント（Codex）
 
-## 2026-09-06 12:10 Codexチェックポイント
+- GitHub mainへ `docs/フェーズ2_補完整理計画.md`、`.nojekyll`、`robots.txt`、`404.html` を追加済み。
+- `index.html` の大きなWHYボタンを `/why/` へ変更済み。コミット `104896e` は差分1行だけと確認した。
+- 関連コミット：`9419faa`、`18891a2`、`72a655c`、`104896e`。`404.html` はmainルートに存在する。
+- 未保存のGitHub編集画面はない。ConoHa、DNS、GAS、Google Sheets、`CNAME` は未変更。
+- 次の1手：バックアップ済みのサウナ大学元画像45枚から、実際に参照中の35件をGitHub用に準備し、HTML参照先を小分けで変更する。
+- 戻し方：GitHubの該当コミットを個別にrevertする。独自ドメインは未切替なので、現在のConoHa公開サイトには影響しない。
 
-- WebとDBの復旧用バックアップ完成。全体8,472ファイル、280,865,902 bytes、ハッシュ不一致0件。
-- DB SQLは4,674,654 bytes、18テーブル、INSERT文103件、HTMLエラー混入0件。
-- 完全スナップショットとの差10項目は記録済み。次はフェーズ2「GitHub補完・整理」。
-- 次の1手は公開差分の分類と、一般訪問者がログインせず開ける地図方式の決定。
-- ConoHa本番、DNS、DB内容、GASは変更していない。
+## 2026-09-06 サウナ大学画像準備チェックポイント（Codex）
+
+- ローカル準備完了：`assets/images/sauna-university/` に画像35枚と `manifest.csv`。合計8,127,222 bytes、破損0件。
+- ローカルの `sauna-daigaku.html` は旧ConoHa画像URL35件をGitHub内パスへ変更済み。旧URL残り0件。
+- GitHub未反映：画像35枚、`manifest.csv`、HTML修正版。
+- ブロッカー：Chrome拡張機能のファイルURL権限が無効で `fileChooser.setFiles` が拒否された。
+- 次の1手：Chrome拡張機能の「ファイルのURLへのアクセスを許可する」をオンにする。画像を先にアップロードし、確認後にHTMLを反映する。
+- ConoHa、DNS、GAS、Google Sheets、`CNAME` は未変更。
+
+## 2026-09-06 サウナ大学画像移行完了チェックポイント（Codex）
+
+- GitHub mainへ画像35枚と `manifest.csv` を追加済み（`146bfa6`）。フォルダー画面で36ファイルを確認した。
+- `sauna-daigaku.html` の旧ConoHa画像URL 35件をGitHub内パスへ変更済み（`0f89c3b`）。差分は1ファイル・35行追加・35行削除。
+- 未保存のGitHub編集はない。ローカルの画像・HTML・記録文書は保持している。
+- ConoHa、DNS、GAS、Google Sheets、`CNAME` は未変更。
+- 次の1手：未ログインで利用できる地図方式を決め、GitHub Pagesのテスト公開へ進む。
+- 戻し方：`0f89c3b` をrevertしてHTML参照だけ旧ConoHa URLへ戻す。

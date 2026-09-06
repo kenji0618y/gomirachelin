@@ -2,7 +2,27 @@
 
 このファイルは、サイトの現在の状況やできていること、次にやることを記録するためのドキュメントです。
 
-最終更新：2026-09-05
+最終更新：2026-09-06 12:10
+
+## ConoHaデータベース保存完了（2026-09-06）
+
+- phpMyAdminから対象DB `yux6k_54n7x7hu` をQuick / SQLでエクスポートした。
+- `gomirachelin-work/backups/conoha/2026-09-05/database/yux6k_54n7x7hu-2026-09-06.sql` に保存した（4,674,654 bytes）。
+- phpMyAdmin SQLヘッダー、CREATE TABLE 18件、INSERT文103件、HTMLエラー混入0件を確認した。SHA-256は同フォルダーの `manifest.csv` に保存した。
+- WordPress本体、`wp-content`、画像、設定、現行 `.htaccess`、SQLが揃い、復旧可能なバックアップが成立した。
+- 未取得10項目は完全スナップショットとの差として記録を残す。施設5フォルダーはGitHub mainにも静的版がある。残るルート5ファイルは配布文書・旧バックアップ設定で、復旧の必須構成ではない。
+- 判断と理由：フェーズ1のバックアップ要件を満たしたものとして次の整理へ進む。公開中のサイトを戻せる主要データが揃い、差分も明示できたため。
+- ConoHa本番、DNS、データベース内容、GASは変更していない。
+
+## ConoHaバックアップ実体検証（2026-09-06）
+
+- 分割ZIPを `gomirachelin-work/backups/conoha/2026-09-05/web/` へ保存し、`manifest.csv` にSHA-256を記録した。
+- `web/extracted/sauna-cospa.com/` へ統合解凍した。8,450ファイル、189,625,554 bytes、同名内容の衝突0件。
+- `wp-content/uploads` は440ファイル、28,451,010 bytes。サウナ大学の元画像 `sauna-univ-01.jpg`〜`45.jpg` も保存済み。
+- ConoHaルート88項目のうち78項目を保存。施設5フォルダーとルート5ファイルの計10項目は、取得したZIP内に無かったため追加取得が必要。
+- `.htaccess` はWordPress標準の書換えとCocoonのキャッシュ・圧縮設定で、旧URLから新URLへの独自リダイレクトは無い。
+- DBエクスポートは未実施。ConoHaのセッションは期限切れ。本番ファイル、DB、DNS、GASは変更していない。
+- 判断と理由：Webを「完了」ではなく「主要データ保存済み、残り10項目」と記録する。別のAIが完全バックアップと誤認するのを防ぐため。
 
 ## ConoHaバックアップ作業中の利用制限チェックポイント（2026-09-05・Claude）
 
@@ -362,23 +382,40 @@ WordPress（`https://sauna-cospa.com`）から書き出したもので、ConoHa�
 - **同じ施設の重複記事2本（`オアシスサウナ-アスティル-2`、`上野ステーションホステル-オリエンタル2-2`）はレビュー一覧に載せていない**
   - **理由**: 一覧に同じ施設名が2回並ぶのを避けるため。ページ自体は残してあります。
 
+## フェーズ2の不足整理を開始（2026-09-06 Codex）
 
-## ConoHaバックアップ実体検証（2026-09-06 07:45 Codex）
+- Grokが作成した `docs/公開サイトとGitHubの差分.md` とGitHub mainの構成を照合した。
+- `docs/フェーズ2_補完整理計画.md` を作成し、作業を「先に追加・修正」「方式決定後」「公開切替まで保留」に分類した。
+- 次の変更は `.nojekyll`、`404.html`、`robots.txt`、トップのWHYリンク修正を小さな単位で準備する。
+- `CNAME`、DNS、ConoHa、フォルダー削除は変更していない。
+- 判断理由：復旧用バックアップが完成したため、公開先を変えずにGitHub Pagesテストの準備を進められる。
 
-- 分割ZIPを手元へ保存し、SHA-256一覧を作成した。
-- `web/extracted/sauna-cospa.com/` へ統合解凍した。8,450ファイル、189,625,554 bytes、同名内容の衝突0件。
-- `wp-content/uploads` は440ファイル、28,451,010 bytes。サウナ大学の元画像45枚も保存済み。
-- ConoHaルート88項目のうち78項目を保存。施設5フォルダーとルート5ファイルの計10項目は追加取得が必要。
-- `.htaccess` はWordPress標準の書換えとCocoon設定で、独自リダイレクトは無い。
-- DBエクスポートは未実施。ConoHaのセッションは期限切れ。本番ファイル、DB、DNS、GASは変更していない。
-- 判断と理由：Webを「主要データ保存済み、残り10項目」と記録する。別のAIが完全バックアップと誤認するのを防ぐため。
+## フェーズ2の基本ファイル追加（2026-09-06 12:30 Codex）
 
+- GitHub mainへ `docs/フェーズ2_補完整理計画.md`、`.nojekyll`、`robots.txt`、`404.html` を小分けで追加した。
+- トップページの大きな「WHY GOMIRACHELIN？」ボタンを、WordPress固有の `/?page_id=37` から静的ページ `/why/` へ修正した。
+- WHYリンクのコミット `104896e` は、`index.html` の1行だけが変更されたことをGitHub差分画面で確認した。
+- GitHub側の関連コミット：計画書 `9419faa`、`.nojekyll` `18891a2`、`robots.txt` `72a655c`、WHYリンク `104896e`。`404.html` もmainのルートに追加済み。
+- `CNAME`、DNS、ConoHa、GAS、Google Sheetsは変更していない。GitHub Pagesの独自ドメイン切替も未実施。
+- 次はサウナ大学が参照するConoHa画像35件をGitHub内画像へ移す準備と、GAS地図を一般訪問者が開ける方式の決定を進める。
+- 判断理由：公開先を変えずに戻せる小さな変更だけを先行し、GitHubテスト公開に必要な土台を安全に整えるため。
 
-## ConoHaデータベース保存完了（2026-09-06 12:10 Codex）
+## サウナ大学画像の移行準備（2026-09-06 12:45 Codex）
 
-- phpMyAdminからDB `yux6k_54n7x7hu` をQuick / SQLでエクスポートした。
-- ローカルの `backups/conoha/2026-09-05/database/` に保存した。4,674,654 bytes、CREATE TABLE 18件、INSERT文103件、HTMLエラー混入0件。SHA-256一覧も保存済み。
-- Web 8,450ファイルとSQLが揃い、復旧可能なバックアップが成立した。バックアップ全体は8,472ファイル、280,865,902 bytes、ハッシュ不一致0件。
-- 完全スナップショットとの差10項目は継続記録する。施設5フォルダーの静的版はGitHub mainにも存在し、残るルート5ファイルは復旧の必須構成ではない。
-- 判断と理由：フェーズ1のバックアップ要件を満たしたため、フェーズ2「GitHub補完・整理」へ進む。
-- ConoHa本番、DNS、DB内容、GASは変更していない。SQL本体は秘密情報を含むためGitHubへ入れない。
+- ConoHaバックアップから、`sauna-daigaku.html` が実際に参照するJPEG 35枚を `assets/images/sauna-university/` へコピーした。合計8,127,222 bytes。
+- 35枚すべて画像として読み込めることを確認し、`manifest.csv` にファイル名・容量・SHA-256を保存した。
+- ローカルの `sauna-daigaku.html` は旧ConoHa URL 35件をGitHub内パスへ置換済み。旧URLの残りは0件。
+- 画像とHTML修正版はGitHubへ未反映。Chrome拡張機能のファイルURL権限が無効で、GitHubの複数ファイル選択が拒否されたため。
+- 次の1手：Chrome拡張機能の「ファイルのURLへのアクセスを許可する」をオンにし、画像35枚を先にGitHubへアップロードする。存在確認後にHTMLを反映する。
+- 詳細は `docs/サウナ大学画像移行.md`。ConoHa、DNS、GAS、Sheetsは変更していない。
+
+## サウナ大学画像のGitHub移行完了（2026-09-06 12:55 Codex）
+
+- GitHub main の `assets/images/sauna-university/` へ、検証済みJPEG 35枚と `manifest.csv` を追加した（コミット `146bfa6`）。
+- GitHubのフォルダー画面で対象35枚と `manifest.csv` がすべて存在することを確認した。
+- `sauna-daigaku.html` の旧ConoHa画像URL 35件をGitHub内パスへ変更した（コミット `0f89c3b`）。
+- HTMLのコミット差分は `sauna-daigaku.html` 1ファイルだけ、35行追加・35行削除であることを確認した。
+- GitHub側では画像とHTMLの移行が完了した。現在公開中のConoHa、DNS、GAS、Google Sheets、`CNAME` は変更していない。
+- 次の1手：一般訪問者がGoogleログインなしで使える地図方式を決定し、その後GitHub Pagesのテスト公開へ進む。
+- 判断理由：画像を先に配置・確認してからHTMLを切り替える順序にし、参照先の画像切れを防ぐため。
+- 戻し方：問題があれば `0f89c3b` を戻すとHTMLだけ旧ConoHa画像URLへ戻せる。画像追加 `146bfa6` は表示に影響しないため、そのまま保管してもよい。
