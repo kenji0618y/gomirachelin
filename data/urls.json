@@ -470,5 +470,13 @@
     "link": "https://sauna-cospa.com/%e9%81%8b%e5%96%b6%e8%80%85%e6%83%85%e5%a0%b1/",
     "date": "2026-06-15T00:10:46",
     "type": "page"
+  },
+  {
+    "id": 0,
+    "slug": "reviews",
+    "title": "レビュー一覧",
+    "link": "https://sauna-cospa.com/reviews/",
+    "date": "2026-09-04T13:09:47",
+    "type": "page"
   }
 ]

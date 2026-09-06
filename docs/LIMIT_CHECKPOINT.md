@@ -11,7 +11,7 @@
 
 ## 最後に完了した操作
 
-- ConoHa再ログイン。サーバー `wing-26-06-14-21-29`。
+- ConoHa再ログイン。サーバー `wing-26-（サーバー名・伏せ字）`。
 - 自動バックアップ 2026-08-22〜2026-09-04、Web/Mail/DB全日リストア可。リストア未実行。
 - 分割ZIPを `gomirachelin-work/backups/conoha/2026-09-05/web/` に保存し、`manifest.csv` にSHA-256を記録。
 - `web/extracted/sauna-cospa.com/` へ統合解凍。8,450ファイル、189,625,554 bytes、同名内容の衝突0件。

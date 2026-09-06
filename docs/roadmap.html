@@ -130,8 +130,8 @@
       <div class="card stat"><b>30日</b><span>切替後の監視期間</span></div>
     </section>
 
-    <aside class="next"><span class="next-badge">次の1手</span><p><strong>一般訪問者がログインなしで使える地図方式を決める。</strong> 方式を決めた後、GASソースを保存し、GitHub Pagesのテスト公開で確認します。</p></aside>
-    <aside class="blocker"><span class="blocker-badge">公開前の問題</span><p><strong>現在のGAS地図は未ログイン状態ではGoogleログイン画面になります。</strong> GitHubにリンクはありますが、ConoHa本番には未反映です。解決するまで本番メニューへ追加しません。</p></aside>
+    <aside class="next"><span class="next-badge">次の1手</span><p><strong>リポジトリを公開（Public）に変更し、GitHub Pagesを有効にする。</strong> 公開前の安全確認と伏せ字化は完了しました。Settings→General→Change repository visibility でPublicへ、次にSettings→Pagesで <code>main</code> / <code>/(root)</code> を選んでSaveします。無料プランのままテスト公開できます。</p></aside>
+    <aside class="next"><span class="next-badge">解消済み</span><p><strong>公開前のブロッカーだったサウナ地図は解決しました（2026-09-06）。</strong> GASの公開設定を「全員」へ変更し、未ログインで開けることを確認。全60ページのメニューへ「サウナ地図」を統一追加しました。</p></aside>
 
     <section>
       <div class="section-head"><div><h2>移行の7フェーズ</h2><p class="hint">工程を押すと詳細が切り替わります</p></div></div>
@@ -146,7 +146,7 @@
       </div>
       <div class="card phase-detail" aria-live="polite">
         <div><span class="now-label" id="detailStatus">今ここ</span><h3 id="detailTitle">GitHub補完・整理</h3><p id="detailPurpose">公開差分を整理し、テストに必要なものだけをそろえます。</p></div>
-        <ul id="detailTasks"><li>✓ 差分を追加・URL変更・保留へ分類</li><li>✓ Pages基本ファイルとWHYリンクを反映</li><li>✓ サウナ大学画像35枚とHTML参照をGitHubへ移行</li><li>一般公開できる地図方式を決定</li><li>GASソースを安全に保存</li><li>GitHub Pagesで主要画面をテスト</li></ul>
+        <ul id="detailTasks"><li>✓ 差分を追加・URL変更・保留へ分類</li><li>✓ Pages基本ファイルとWHYリンクを反映</li><li>✓ サウナ大学画像35枚とHTML参照をGitHubへ移行</li><li>✓ 一般公開できる地図方式を決定</li><li>✓ GASの公開設定を「全員」に変更（未ログインで確認済み）</li><li>✓ 全60ページのメニューへサウナ地図を統一追加</li><li>GASソースを安全に保存</li><li>GitHub Pagesで主要画面をテスト</li></ul>
       </div>
     </section>
 
@@ -184,8 +184,8 @@
     const phaseData = {
       0: ["完了", "準備", "GitHubを作業の正本として使える状態にしました。", ["GAS地図 v91を公開", "地図をGitHubメニューへ追加", "AI共通ルールをAGENTS.mdへ一元化"]],
       1: ["完了", "棚卸し・バックアップ", "Web主要データとDB SQLを保存・検証しました。完全スナップショットとの差10項目も記録済みです。", ["自動バックアップ状況を確認済み", "Web 8,450ファイルを解凍・検証済み", "WordPressデータベース18テーブルをSQL保存", "DNS・メール・契約を記録", "公開差分を作成"]],
-      2: ["今ここ", "GitHub補完・整理", "公開差分を整理し、GitHub Pagesテストに必要なものだけをそろえます。", ["✓ 差分を追加・URL変更・保留へ分類", "✓ Pages基本ファイルとWHYリンクを反映", "✓ サウナ大学画像35枚とHTML参照をGitHubへ移行", "一般公開できる地図方式を決定", "GASソースを安全に保存", "GitHub Pagesで主要画面をテスト"]],
-      3: ["予定", "テスト公開", "本番と同じ操作を一時URLで確認します。", ["公開方法を決定", "未ログインで地図を開けることを確認", "PCとスマートフォンで確認", "画像・リンク・問い合わせを確認", "重大な404を0件にする"]],
+      2: ["今ここ", "GitHub補完・整理", "公開差分を整理し、GitHub Pagesテストに必要なものだけをそろえます。", ["✓ 差分を追加・URL変更・保留へ分類", "✓ Pages基本ファイルとWHYリンクを反映", "✓ サウナ大学画像35枚とHTML参照をGitHubへ移行", "✓ 一般公開できる地図方式を決定", "✓ GASの公開設定を「全員」に変更（未ログインで確認済み）", "✓ 全60ページのメニューへサウナ地図を統一追加", "GASソースを安全に保存", "GitHub Pagesで主要画面をテスト"]],
+      3: ["予定", "テスト公開", "本番と同じ操作を一時URLで確認します。", ["✓ 公開方法を決定", "✓ 未ログインで地図を開けることを確認", "PCとスマートフォンで確認", "画像・リンク・問い合わせを確認", "重大な404を0件にする"]],
       4: ["予定", "ドメイン切替準備", "メールを守りながら公開先を変更できる手順を作ります。", ["DNS値を保存", "独自ドメインを検証", "Web用設定だけを変える計画", "ConoHaへ戻す手順を記録"]],
       5: ["予定", "切替・30日監視", "sauna-cospa.comを切り替え、安定性を確認します。", ["DNSを切替", "HTTPSと主要ページを確認", "404とアクセス解析を監視", "修正はGitHubだけで実施"]],
       6: ["予定", "ConoHa終了", "依存がないことを確認して費用を止めます。", ["依存0件を再確認", "最終バックアップを2か所に保存", "ドメインとメールへの影響を確認", "解約日をSTATE.mdへ記録"]]
