@@ -163,6 +163,7 @@ page = """<!DOCTYPE html>
         <a href="/why/">WHY</a>
         <a href="/ランキング/">ランキング</a>
         <a href="/sauna-university/">サウナ大学</a>
+        <a href="/map/">サウナ地図</a>
         <a href="/お問い合わせ/">お問い合わせ</a>
     </nav>
   </div>

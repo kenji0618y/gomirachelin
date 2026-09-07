@@ -58,3 +58,8 @@
    - 更新後は `python scripts/build_rankings.py` と `python scripts/build_rankings.py --check` を実行してください。
    - 詳しい手順は `docs/ランキング更新手順.md` を読んでください。
    - 10項目の意味は `docs/10項目評価基準.md` を正本とし、独自解釈で変更しないでください。
+
+14. **現在URLと旧URL履歴を混ぜないこと**
+   - 現在使うページ情報は `data/urls.json`、転送用に残す旧投稿情報は `data/url-history.json` に記録してください。
+   - 旧URLのフォルダーは、外部リンクを守る転送ページなので削除しないでください。
+   - URLを変更したら `python scripts/check_url_data.py` と `python scripts/gen_reviews.py` を実行してください。
