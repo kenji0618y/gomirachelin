@@ -63,3 +63,8 @@
    - 現在使うページ情報は `data/urls.json`、転送用に残す旧投稿情報は `data/url-history.json` に記録してください。
    - 旧URLのフォルダーは、外部リンクを守る転送ページなので削除しないでください。
    - URLを変更したら `python scripts/check_url_data.py` と `python scripts/gen_reviews.py` を実行してください。
+
+15. **地図の施設・座標は正本JSONから更新すること**
+   - 静的地図の施設データは `data/map-facilities.json` が正本です。`map/index.html` 内の配列を直接編集しないでください。
+   - 更新後は `python scripts/build_map_data.py` と `python scripts/build_map_data.py --check` を実行してください。
+   - 推測した座標は登録せず、施設名と所在地が一致する情報で確認してください。

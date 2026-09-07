@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "sourceRow": 130,
+      "name": "大阪サウナDESSE",
+      "pref": "大阪府",
+      "lat": 34.6762994,
+      "lng": 135.5015418,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "大阪サウナDESSE, 心斎橋筋北商店街, 南船場三丁目, 中央区, 大阪市, 大阪府, 542-0081, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 134,
+      "name": "キャナルリゾート",
+      "pref": "愛知県",
+      "lat": 35.1190255,
+      "lng": 136.8782536,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "キャナルリゾート, 小碓橋, 新船町一丁目, 新船町, 中川区, 名古屋市, 愛知県, 454-8502, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 169,
+      "name": "渋谷SAUNAS",
+      "pref": "東京都",
+      "lat": 35.6560536,
+      "lng": 139.7007824,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "渋谷SAUNAS, 渋谷さくら坂, 桜丘町, 渋谷区, 東京都, 150-0031, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 70,
+      "name": "サ郷kakeRu",
+      "pref": "沖縄県",
+      "lat": 26.433114,
+      "lng": 127.7799612,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式ページの住所とGoogle Maps埋め込み座標が一致",
+      "sourceUrl": "https://www.kakeru37.com/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 83,
+      "name": "寒の地獄旅館",
+      "pref": "大分県",
+      "lat": 33.1125069,
+      "lng": 131.2268319,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式住所とGoogle Maps施設情報が一致",
+      "sourceUrl": "https://kannojigoku.jp/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 88,
+      "name": "YUBUNE SAUNA PARK はにゅうの湯",
+      "pref": "埼玉県",
+      "lat": 36.1444422,
+      "lng": 139.5398815,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式住所とGoogle Maps施設情報が一致",
+      "sourceUrl": "https://yubune-sauna-park.com/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 138,
+      "name": "サウナと天然温泉 湯らっくす",
+      "pref": "熊本県",
+      "lat": 32.7853305,
+      "lng": 130.7023351,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式アクセスページのGoogle Mapsリンク",
+      "sourceUrl": "https://www.yulax.info/access/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 139,
+      "name": "伊予の湯治場 喜助の湯",
+      "pref": "愛媛県",
+      "lat": 33.8414548055,
+      "lng": 132.7510375054,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式ページの住所とGoogle Maps埋め込み座標が一致",
+      "sourceUrl": "https://kisuke.com/yu-matsuyama/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 160,
+      "name": "湯屋 FUROBAKKA",
+      "pref": "富山県",
+      "lat": 36.8778161168,
+      "lng": 137.4190903994,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式ページの住所とGoogle Maps埋め込み座標が一致",
+      "sourceUrl": "https://furobakka.com/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 175,
+      "name": "SAUNA BUG",
+      "pref": "愛知県",
+      "lat": 35.0964375,
+      "lng": 137.1641875,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式サイト一致・Google Mapsの施設住所とPlus Codeを確認",
+      "sourceUrl": "https://sauna-bug.com/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 179,
+      "name": "神戸 クアハウス",
+      "pref": "兵庫県",
+      "lat": 34.6995625,
+      "lng": 135.1961875,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式住所とGoogle Mapsの施設住所・Plus Codeを確認",
+      "sourceUrl": "https://kobe-kua-house.com/access/",
+      "checked": "2026-09-07"
+    }
+  ]
+}
