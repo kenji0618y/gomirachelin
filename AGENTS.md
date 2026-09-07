@@ -57,3 +57,4 @@
    - ランキングデータの正本は `data/rankings.json` です。順位や施設の数字をHTMLへ直接書き込まないでください。
    - 更新後は `python scripts/build_rankings.py` と `python scripts/build_rankings.py --check` を実行してください。
    - 詳しい手順は `docs/ランキング更新手順.md` を読んでください。
+   - 10項目の意味は `docs/10項目評価基準.md` を正本とし、独自解釈で変更しないでください。

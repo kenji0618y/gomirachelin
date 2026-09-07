@@ -34,7 +34,7 @@
       "id": "s5",
       "en": "LOYLY",
       "jp": "⑤ロウリュ",
-      "description": "ロウリュ・アウフグースの質。"
+      "description": "ロウリュ・アウフグースの提供内容と質。"
     },
     {
       "key": "a6",
@@ -48,14 +48,14 @@
       "id": "s7",
       "en": "LOUNGE",
       "jp": "⑦スパ外施設",
-      "description": "館内のくつろぎと余白。"
+      "description": "浴室外の館内休憩・食事施設の充実。"
     },
     {
       "key": "a8",
       "id": "s8",
       "en": "CLEANLINESS",
       "jp": "⑧清潔さ",
-      "description": "清掃の行き届き。"
+      "description": "築年数と切り離した清掃・衛生。"
     },
     {
       "key": "a9",

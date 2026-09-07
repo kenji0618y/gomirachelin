@@ -22,10 +22,10 @@ AXES = [
     {"key": "a2", "id": "s2", "en": "COLD BATH", "jp": "②水風呂", "description": "水温・深さ・広さ。冷たさの質。"},
     {"key": "a3", "id": "s3", "en": "REST", "jp": "③休憩", "description": "外気浴・内気浴の快適さ。"},
     {"key": "a4", "id": "s4", "en": "FLOW", "jp": "④動線", "description": "サウナ→水→休憩の流れ。"},
-    {"key": "a5", "id": "s5", "en": "LOYLY", "jp": "⑤ロウリュ", "description": "ロウリュ・アウフグースの質。"},
+    {"key": "a5", "id": "s5", "en": "LOYLY", "jp": "⑤ロウリュ", "description": "ロウリュ・アウフグースの提供内容と質。"},
     {"key": "a6", "id": "s6", "en": "BATH", "jp": "⑥スパ内施設", "description": "浴室内の湯・設備の充実。"},
-    {"key": "a7", "id": "s7", "en": "LOUNGE", "jp": "⑦スパ外施設", "description": "館内のくつろぎと余白。"},
-    {"key": "a8", "id": "s8", "en": "CLEANLINESS", "jp": "⑧清潔さ", "description": "清掃の行き届き。"},
+    {"key": "a7", "id": "s7", "en": "LOUNGE", "jp": "⑦スパ外施設", "description": "浴室外の館内休憩・食事施設の充実。"},
+    {"key": "a8", "id": "s8", "en": "CLEANLINESS", "jp": "⑧清潔さ", "description": "築年数と切り離した清掃・衛生。"},
     {"key": "a9", "id": "s9", "en": "UNIQUENESS", "jp": "⑨独自性", "description": "他にない体験と個性。"},
     {"key": "a10", "id": "s10", "en": "HOSPITALITY", "jp": "⑩ホスピタリティ", "description": "接客と、また来たくなる温かさ。"},
 ]
@@ -130,6 +130,37 @@ def build_axes_page(source: str, axes: list[dict], facilities: list[dict]) -> st
     result = source
     for number, axis in enumerate(axes, start=1):
         key = axis["key"]
+        axis_id = html.escape(str(axis["id"]))
+        axis_en = html.escape(str(axis["en"]))
+        axis_jp = html.escape(str(axis["jp"]))
+        axis_description = html.escape(str(axis["description"]))
+
+        card_pattern = rf'<a class="score-card" href="#axis-{re.escape(axis_id)}">.*?</a>'
+        card = (
+            f'<a class="score-card" href="#axis-{axis_id}"><div class="no">{number:02d}</div>'
+            f'<div class="en">{axis_en}</div><div class="jp">{axis_jp}</div></a>'
+        )
+        result, card_count = re.subn(card_pattern, card, result, count=1)
+        if card_count != 1:
+            raise RuntimeError(f"axis-s{number}の項目カードを更新できません")
+
+        header_pattern = (
+            rf'(<div class="axis-block" id="axis-{re.escape(axis_id)}">\s*'
+            rf'<div class="axis-head">\s*)'
+            rf'<div class="en num">.*?</div>\s*<div class="jp">.*?</div>\s*'
+            rf'<div class="desc">.*?</div>'
+        )
+        def replace_header(match: re.Match[str]) -> str:
+            return (
+                f'{match.group(1)}<div class="en num">{axis_en}</div>\n'
+                f'      <div class="jp">{axis_jp}</div>\n'
+                f'      <div class="desc">{axis_description}</div>'
+            )
+
+        result, header_count = re.subn(header_pattern, replace_header, result, count=1, flags=re.S)
+        if header_count != 1:
+            raise RuntimeError(f"axis-s{number}の見出しを更新できません")
+
         scored = [(index, item) for index, item in enumerate(facilities) if key in item.get("axes", {})]
         scored.sort(key=lambda pair: (-float(pair[1]["axes"][key]), pair[0]))
         rows = "\n".join(render_row(item, item["axes"][key], position) for position, (_, item) in enumerate(scored, 1))
