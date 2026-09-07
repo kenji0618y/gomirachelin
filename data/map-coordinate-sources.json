@@ -286,6 +286,171 @@
       "verifiedBy": "exact facility name and prefecture/city match",
       "displayName": "サウナ海, 本通り, 紙屋町二丁目, 中区, 広島市, 広島県, 730-0031, 日本",
       "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 60,
+      "name": "いつつばしの里",
+      "pref": "山口県",
+      "lat": 34.168285,
+      "lng": 132.179886,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://www.iwakunikankohotel.co.jp/onsen/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 73,
+      "name": "ぬかとゆげ",
+      "pref": "京都府",
+      "lat": 35.625061,
+      "lng": 135.063599,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://nuka-yuge.com/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 74,
+      "name": "COCOFURO おおみね湯",
+      "pref": "大阪府",
+      "lat": 34.618801,
+      "lng": 135.556473,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://cocofuro.com/oomineyu/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 75,
+      "name": "サウナ&カプセルホテル ルーマプラザ",
+      "pref": "京都府",
+      "lat": 35.003597,
+      "lng": 135.774017,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://rumor-plaza.jp/access/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 80,
+      "name": "関門の湯 ドーミーインPREMIUM下関",
+      "pref": "山口県",
+      "lat": 33.94907,
+      "lng": 130.927521,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://dormy-hotels.com/dormyinn/hotels/shimonoseki/access/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 81,
+      "name": "WakuWaku 湧く和来",
+      "pref": "山口県",
+      "lat": 33.960903,
+      "lng": 130.943893,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://wakuwaku-onsenfitness.com/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 87,
+      "name": "空庭温泉 OSAKA BAY TOWER",
+      "pref": "大阪府",
+      "lat": 34.669064,
+      "lng": 135.461349,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://solaniwa.com/access/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 89,
+      "name": "COCOFURO かが浴場",
+      "pref": "東京都",
+      "lat": 35.754948,
+      "lng": 139.731995,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://cocofuro.com/kagayokujo/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 94,
+      "name": "SAUNA RESORT 天光の湯",
+      "pref": "岐阜県",
+      "lat": 35.316296,
+      "lng": 137.135101,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://tenko-spa.jp/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 95,
+      "name": "四日市温泉 おふろcafé 湯守座",
+      "pref": "三重県",
+      "lat": 34.986763,
+      "lng": 136.602341,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://ofurocafe-yumoriza.com/contact",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 85,
+      "name": "ホテル・アンドルームス那覇ポート",
+      "pref": "沖縄県",
+      "lat": 26.2130809,
+      "lng": 127.668023,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "ホテル・アンドルームス那覇ポート, 臨港道路港湾1号線, 西二丁目, 通堂町, 那覇市, 沖縄県, 900-8585, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 90,
+      "name": "SaunaLab Kanda",
+      "pref": "東京都",
+      "lat": 35.6922544,
+      "lng": 139.7596057,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "SaunaLab Kanda, 神田警察通り, 神田錦町三丁目, 神田錦町, 千代田区, 東京都, 102-0000, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 91,
+      "name": "COCOFURO ますの湯",
+      "pref": "東京都",
+      "lat": 35.5798546,
+      "lng": 139.68586,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "COCOFURO ますの湯, ゆうやけ通り, 南久が原二丁目, 南久が原, 大田区, 東京都, 146-0084, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 92,
+      "name": "豊島園 庭の湯",
+      "pref": "東京都",
+      "lat": 35.743992,
+      "lng": 139.64797,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "豊島園 庭の湯, 豊島園通り, 練馬, 練馬区, 東京都, 176-0001, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 93,
+      "name": "ウェルビー今池",
+      "pref": "愛知県",
+      "lat": 35.1664972,
+      "lng": 136.9384348,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "ウェルビー今池, ウェルビー通, 今池五丁目, 今池南, 千種区, 名古屋市, 愛知県, 464-0850, 日本",
+      "checked": "2026-09-07"
     }
   ]
 }
