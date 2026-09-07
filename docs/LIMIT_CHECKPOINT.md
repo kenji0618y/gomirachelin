@@ -7,6 +7,7 @@
 - 地図正本 `data/map-facilities.json`、生成・検査 `scripts/build_map_data.py`、座標出典 `data/map-coordinate-sources.json`、手順 `docs/地図データ更新手順.md` を追加。
 - 掲載174施設、座標65、未登録109。記事あり未登録11件はすべて補完済み。
 - ローカル表示、JavaScript構文、都道府県境界内、全内部リンクを検査済み。
+- コミット `589b89a` をmainへpushし、公開地図でも65ピンと新規施設ピンを確認済み。
 - ConoHa、DNS、メール、GAS、Google Sheetsは未変更。
 - 次の1手：未登録109施設を具体的な所在地があるものから小分けに補完する。
 

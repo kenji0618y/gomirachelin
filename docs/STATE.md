@@ -10,6 +10,7 @@
 - `scripts/build_map_data.py` で `map/index.html` を生成・同期検査できるようにした。座標が日本域内か、登録都道府県の境界内かも検査する。
 - 記事がある座標未登録11施設を、公式住所、Google Maps、OpenStreetMapの一致で確認して追加。座標ありは54件から65件、未登録は120件から109件になった。
 - ローカル表示で47都道府県境界、全国174施設、拡大時の65ピン、新規追加した渋谷SAUNASのピン存在を確認した。
+- コミット `589b89a` のPages反映後、公開地図でも65ピンと大阪サウナDESSE・渋谷SAUNAS・神戸クアハウスの新規ピンを確認した。
 - 座標の出典は `data/map-coordinate-sources.json`、更新手順は `docs/地図データ更新手順.md` に保存。ConoHa、DNS、GAS、Google Sheetsは変更していない。
 
 ## 旧URL履歴の分離（2026-09-07・Codex）

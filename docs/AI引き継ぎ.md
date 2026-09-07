@@ -7,6 +7,7 @@
 - 地図施設の正本を `data/map-facilities.json` に分離。`scripts/build_map_data.py` でHTML反映、同期、都道府県境界内チェックを行う。
 - 記事あり未登録11施設を追加し、座標は65/174件、未登録109件。出典は `data/map-coordinate-sources.json`。
 - ローカルで県境125パス、県名ラベル47、全国174施設、拡大時65ピン、新規渋谷SAUNASピンを確認。内部リンク欠落0。
+- コミット `589b89a` をmainへpushし、公開 `https://kenji0618y.github.io/map/` でも65ピンと新規3施設（大阪サウナDESSE・渋谷SAUNAS・神戸クアハウス）を確認済み。
 - 途中で生成スクリプトの置換文字列が `\\n` を改行として解釈する問題を検出し、callable replacementへ修正。Node構文検査に合格後だけ採用した。
 - 次の1手：未登録109施設は記事のない施設。所在地が具体的なものから小分けに座標を追加する。Sheets全体バックアップはログイン操作が必要。
 
