@@ -121,6 +121,61 @@
       "verifiedBy": "公式住所とGoogle Mapsの施設住所・Plus Codeを確認",
       "sourceUrl": "https://kobe-kua-house.com/access/",
       "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 61,
+      "name": "フレスパランド カッタの湯",
+      "pref": "山口県",
+      "lat": 33.958454,
+      "lng": 131.2614814,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "フレスパランド カッタの湯, 国道490号, 沼一丁目, 琴崎町, 宇部市, 山口県, 755-0072, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 68,
+      "name": "亜熱帯サウナ",
+      "pref": "沖縄県",
+      "lat": 26.6415904,
+      "lng": 127.9520204,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "亜熱帯サウナ, 県道84号名護本部線, 伊豆味, 本部町, 国頭郡, 沖縄県, 905-0221, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 76,
+      "name": "MACHI:SAUNA HIROSHIMA",
+      "pref": "広島県",
+      "lat": 34.3955504,
+      "lng": 132.4653943,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "machi:sauna hiroshima, 1, 鉄砲町, 中区, 広島市, 広島県, 730-0017, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 77,
+      "name": "塩屋天然温泉 ほの湯楽々園",
+      "pref": "広島県",
+      "lat": 34.3612033,
+      "lng": 132.3540367,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "塩屋天然温泉 ほの湯 楽々園, 国道2号, 楽々園二丁目, 佐伯区, 広島市, 広島県, 731-5136, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 78,
+      "name": "カンデオホテルズ広島八丁堀",
+      "pref": "広島県",
+      "lat": 34.3950685,
+      "lng": 132.463475,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "カンデオホテルズ広島八丁堀, 1, 八丁堀, 中区, 広島市, 広島県, 730-0013, 日本",
+      "checked": "2026-09-07"
     }
   ]
 }
