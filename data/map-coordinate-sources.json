@@ -176,6 +176,116 @@
       "verifiedBy": "exact facility name and prefecture/city match",
       "displayName": "カンデオホテルズ広島八丁堀, 1, 八丁堀, 中区, 広島市, 広島県, 730-0013, 日本",
       "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 58,
+      "name": "スーパー銭湯 雲母の里",
+      "pref": "広島県",
+      "lat": 34.332317,
+      "lng": 132.647629,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合（番地代表点）",
+      "sourceUrl": "https://unmonosato.jp/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 59,
+      "name": "NOT BUSY サウナ&カフェ",
+      "pref": "広島県",
+      "lat": 34.1915122,
+      "lng": 132.4233755,
+      "provider": "official site",
+      "verifiedBy": "公式予約ページが案内するGoogle Maps座標",
+      "sourceUrl": "https://notdusy.com/reserve/notbusy",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 62,
+      "name": "天然温泉コロナの湯 小倉店",
+      "pref": "福岡県",
+      "lat": 33.897495,
+      "lng": 130.856277,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合（番地代表点）",
+      "sourceUrl": "https://www.korona.co.jp/onsen/basic/kok/598",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 64,
+      "name": "sauna kolme kylä",
+      "pref": "岡山県",
+      "lat": 34.6322893,
+      "lng": 133.9297627,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式住所と公式サイト埋め込みGoogle Maps座標が一致",
+      "sourceUrl": "https://sauna-kolme-kyla.jp/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 65,
+      "name": "カプセル&サウナ日本",
+      "pref": "広島県",
+      "lat": 34.488144,
+      "lng": 133.364014,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://sauna.furec.jp/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 67,
+      "name": "ゴールデンタイム高松",
+      "pref": "香川県",
+      "lat": 34.340810380528374,
+      "lng": 134.04803801522255,
+      "provider": "official site and Google Maps",
+      "verifiedBy": "公式住所と公式アクセスページ埋め込みGoogle Maps座標が一致",
+      "sourceUrl": "https://goldentime-takamatsu.com/about/access",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 69,
+      "name": "EMウェルネス",
+      "pref": "沖縄県",
+      "lat": 26.305475,
+      "lng": 127.795227,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://kurashinohakko.jp/access/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 72,
+      "name": "御成桑拿",
+      "pref": "神奈川県",
+      "lat": 35.318638,
+      "lng": 139.548904,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://onari-sauna.com/",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 82,
+      "name": "別府温泉保養ランド",
+      "pref": "大分県",
+      "lat": 33.3155357,
+      "lng": 131.4583394,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "別府温泉保養ランド, 国道500号, 小倉町, 明礬, 別府市, 大分県, 874-0843, 日本",
+      "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 84,
+      "name": "サウナ海",
+      "pref": "広島県",
+      "lat": 34.3940246,
+      "lng": 132.4552492,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "サウナ海, 本通り, 紙屋町二丁目, 中区, 広島市, 広島県, 730-0031, 日本",
+      "checked": "2026-09-07"
     }
   ]
 }
