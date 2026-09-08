@@ -451,6 +451,160 @@
       "verifiedBy": "exact facility name and prefecture/city match",
       "displayName": "ウェルビー今池, ウェルビー通, 今池五丁目, 今池南, 千種区, 名古屋市, 愛知県, 464-0850, 日本",
       "checked": "2026-09-07"
+    },
+    {
+      "sourceRow": 96,
+      "name": "ザ・センチュリオンサウナ札幌",
+      "pref": "北海道",
+      "lat": 43.054874,
+      "lng": 141.3493714,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "ザ・センチュリオンサウナ レスト＆ステイ札幌｜すすきの駅 サウナ, 月寒通, 南4条西6, 狸小路, 中央区, 札幌市, 石狩振興局, 北海道, 北海道地方, 064-8509, 日本",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 98,
+      "name": "北こぶし知床 ホテル&リゾート",
+      "pref": "北海道",
+      "lat": 44.0718739,
+      "lng": 144.9955971,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "北こぶし知床 ホテル＆リゾート, 国道334号, ウトロ東, ウトロ, 斜里町, 斜里郡, オホーツク総合振興局, 北海道, 北海道地方, 099-4352, 日本",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 100,
+      "name": "吹上温泉保養センター 白銀荘",
+      "pref": "北海道",
+      "lat": 43.4314559,
+      "lng": 142.641572,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "吹上温泉保養センター 白銀荘, 十勝岳温泉美瑛線, 吹上, 上富良野町, 空知郡, 上川総合振興局, 北海道, 北海道地方, 071-0500, 日本",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 103,
+      "name": "生姜サウナ 金の亀",
+      "pref": "東京都",
+      "lat": 35.6757738,
+      "lng": 139.7357872,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "生姜サウナ 金の亀, 一ツ木通り, 赤坂三丁目, 赤坂, 港区, 東京都, 107-0052, 日本",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 106,
+      "name": "タイムズ スパ・レスタ",
+      "pref": "東京都",
+      "lat": 35.7287722,
+      "lng": 139.7174078,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "タイムズ スパ・レスタ, 音羽池袋線, 東池袋一丁目, 東池袋, 豊島区, 東京都, 170-0013, 日本",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 108,
+      "name": "花園温泉 sauna kukka",
+      "pref": "大阪府",
+      "lat": 34.6727892,
+      "lng": 135.635122,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "花園温泉 sauna kukka, 大阪枚岡奈良線, 新町, 東大阪市, 大阪府, 579-8037, 日本",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 110,
+      "name": "とれとれの湯",
+      "pref": "和歌山県",
+      "lat": 33.6813856,
+      "lng": 135.3731155,
+      "provider": "OpenStreetMap Nominatim",
+      "verifiedBy": "exact facility name and prefecture/city match",
+      "displayName": "とれとれの湯, 南紀白浜空港線, 堅田, 白浜町, 西牟婁郡, 和歌山県, 649-2201, 日本",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 97,
+      "name": "芦別温泉 おふろcafé 星遊館",
+      "pref": "北海道",
+      "lat": 43.549812,
+      "lng": 142.23761,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://ofurocafe-seiyukan.com/access/",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 99,
+      "name": "KIKI知床 ナチュラルリゾート",
+      "pref": "北海道",
+      "lat": 44.06469,
+      "lng": 145.009079,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://www.kikishiretoko.co.jp/access/",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 101,
+      "name": "常総ONSEN&SAUNA お湯むすび",
+      "pref": "茨城県",
+      "lat": 36.080727,
+      "lng": 139.987595,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://www.oyumusubi.com/",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 102,
+      "name": "多摩境天然温泉 森乃彩",
+      "pref": "東京都",
+      "lat": 35.598209,
+      "lng": 139.384888,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://morinoirodori.com/access/",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 104,
+      "name": "サウナリゾートオリエンタル赤坂",
+      "pref": "東京都",
+      "lat": 35.675945,
+      "lng": 139.736191,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://www.centurion-hotel.com/sauna-oriental/contact/",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 105,
+      "name": "サウナ横綱 本川越店",
+      "pref": "埼玉県",
+      "lat": 35.915905,
+      "lng": 139.481842,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://sauna-yokozuna.com/",
+      "checked": "2026-09-08"
+    },
+    {
+      "sourceRow": 107,
+      "name": "南柏天然温泉すみれ",
+      "pref": "千葉県",
+      "lat": 35.841499,
+      "lng": 139.945511,
+      "provider": "official site and GSI address search",
+      "verifiedBy": "公式住所を国土地理院住所検索で照合",
+      "sourceUrl": "https://minamikashiwa-sumire.com/",
+      "checked": "2026-09-08"
     }
   ]
 }
